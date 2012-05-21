@@ -1,5 +1,5 @@
 <?php
 $db_host = "localhost"; 
-$db_username = "sapuser"; 
-$db_password = "jaro2812"; 
+$db_username = "foolord"; 
+$db_password = "foobar"; 
 $database = "sap";
