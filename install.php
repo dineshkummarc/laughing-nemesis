@@ -5,7 +5,7 @@ if (isset($_POST['sql_dns'])) {
 	}
 	else {
     	if(!$db = mysql_select_db($_POST['sql_daba'])){
-			$errors[] = "<h2>No connection!</h2>";
+			$errors[] = "<h2>".$massages["g1"]."</h2>";
     	}
         else {
             //DATABASE.php anlegen
@@ -73,7 +73,7 @@ else {
 			<a href="#" title=""><img src="images/logo.png" alt="" /></a>
 		</div>
 		<div class="header top_nav">
-			<span class="session">Installation of SStreamers Panel 3.2 <a href="http://www.streamerspanel.com" title="Sign out">cancel</a></span>
+			<span class="session">Installation of Streamers Panel 3.2 <a href="http://www.streamerspanel.com" title="Sign out">cancel</a></span>
 		</div>
 	</div>
 	<div id="sidebar">

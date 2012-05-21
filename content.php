@@ -318,8 +318,10 @@ foreach(mysql_fetch_array($settingsq) as $key => $pref) {
 	}
 }
 // update check
-if ($setting['update_check']=="1"){
-	include "./pages/update.php";
+$currentVersion = 3.2;
+
+if ($setting['update_check'] == 1 && $include_php == 'main'){
+	require_once './pages/update.php';
 }
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -507,7 +509,7 @@ if ($setting['update_check']=="1"){
 							</tr>
 							<tr>
 								<td class="ip_table"><?php echo $messages["48"];?></td>
-								<td class="ip_table_under">3.2</td>
+								<td class="ip_table_under"><?php echo $currentVersion; ?></td>
 							</tr>
 						</tbody>
 					</table>

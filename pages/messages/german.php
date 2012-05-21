@@ -18,6 +18,7 @@ $messages["g2"]		=		"Die Datenbank konnte nicht ausgew&auml;hlt werden!";
 $messages["g3"]		=		"Die Seite konnte nicht gefunden werden, bitte kontaktieren Sie den Admin";
 $messages["g4"]		=		"Die News konnten nicht aus der Datenbank geladen werden!";
 $messages["g5"]		=		"Die Einstellungen konnten nicht aus der Datenbank geladen werden!";
+
 //	
 //	
 //	./index.php
@@ -632,8 +633,10 @@ $messages["561"]	=		"Das Verzeichnis konnte nicht ausgelesen werden!";
 $messages["562"]	=		"Das Verzeichnis konnte nicht ausgelesen werden!";
 $messages["563"]	=		"Das Verzeichnis konnte nicht ausgelesen werden!";
 
+
 //
 //
 //	language credit
-$messages["564"]	=		"<a href=\"http://www.shoutcastadmin.info\">Translated by djcrackhome</a>"
+$messages["564"]	=		"<a href=\"http://www.shoutcastadmin.info\">Translated by djcrackhome</a>";
+$messages["565"]	=		'Streamers Panel | djcrackhome | dave | <a href="http://www.streamerpanel.com">http://www.streamersadmin.com</a> | <a href="http://www.nagualmedia.de/">Design	by Zephon</a>';
 ?>
