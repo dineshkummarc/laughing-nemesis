@@ -64,7 +64,7 @@ else {
 <head>
 	<title>Shoutcast Admin Panel - 3.2</title>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<link rel="stylesheet" type="text/css" href="./css/install.css" />
+	<link rel="stylesheet" type="text/css" href="css/install.css" />
 </head>
 <body>
 <div id="container">

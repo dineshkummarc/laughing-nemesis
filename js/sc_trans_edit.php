@@ -3,7 +3,7 @@
 <head>
 	<title>SAP3_CSS</title>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<link rel="stylesheet" type="text/css" href="./css/framework.css" />
+	<link rel="stylesheet" type="text/css" href="css/framework.css" />
 </head>
 <body>
 

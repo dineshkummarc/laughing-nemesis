@@ -330,13 +330,13 @@ if ($setting['update_check'] == 1 && $include_php == 'main'){
 
 	<title><?PHP echo $setting['title']." - ". $setting['slogan'];?></title>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<link rel="stylesheet" type="text/css" href="./css/framework.css" />
+	<link rel="stylesheet" type="text/css" href="css/framework.css" />
 	<link rel="icon" href="favicon.ico" type="image/x-icon">
 	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-	<script type="text/javascript" src="./js/jquery.min.js"></script>
-	<script type="text/javascript" src="./js/jquery.nyroModal-1.6.2.pack.js"></script>
-    <script src="./js/iphone-style-checkboxes.js" type="text/javascript"></script>
-      <link rel="stylesheet" href="./css/style.css" type="text/css" media="screen" />
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/jquery.nyroModal-1.6.2.pack.js"></script>
+    <script src="js/iphone-style-checkboxes.js" type="text/javascript"></script>
+      <link rel="stylesheet" href="css/style.css" type="text/css" media="screen" />
 	<?php
 	if ($include_php == "main") {
 	?>
@@ -353,8 +353,8 @@ if ($setting['update_check'] == 1 && $include_php == 'main'){
 	<?php
 	if ($include_php == "upload") {
 	?>
-        <link rel="stylesheet" type="text/css" href="./css/uploadbox.css" />
-        <script type="text/javascript" src="./js/uploadrr.js"></script>
+        <link rel="stylesheet" type="text/css" href="css/uploadbox.css" />
+        <script type="text/javascript" src="js/uploadrr.js"></script>
         <script script type="text/javascript">
             var langArray = new Array('Durchsuchen', 'Um Multimedia-Dateien hochzuladen, klicken Sie bitte auf "Durchsuchen" ', ', oder schieben Sie die Multimedia-Dateien einfach in diese Box.', 'Erlaubte Dateitypen:', 'Upload', ' wird nicht akzeptiert.\r\nErlaubte Dateitypen: ', 'Löschen',
             	' gelöscht.', ' Datei', ' Dateien', 'Maximale Dateigröße: ', 'Keine Dateien ausgewählt.', 'Aktuelle Datei: ', 'Zusammenfassung: ', ' Datei(en) ', 'Ihre Datei(en) wurden erfolgreich hochgeladen.', 'Server meldete eine ungültigen JSON Antwort.', 'Die gesendete Datei und die Datei die empfangen wurde, stimmen nicht überein.', 'Upload fehlgeschlagen.', 'Uploade: ', ' hinzugefügt.', 'Aktuelle Datei: ');

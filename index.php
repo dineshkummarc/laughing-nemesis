@@ -64,7 +64,7 @@ if (isset($loggedin) && $loggedin==TRUE) {
 <head>
 	<title>Shoutcast Admin Panel 3 - <?php echo $messages["14"]; ?></title>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<link rel="stylesheet" type="text/css" href="./css/framework.css" />
+	<link rel="stylesheet" type="text/css" href="css/framework.css" />
 	<link rel="icon" href="favicon.ico" type="image/x-icon">
 	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
 	<!--[if IE]>

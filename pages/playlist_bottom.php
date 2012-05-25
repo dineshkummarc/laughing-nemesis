@@ -66,8 +66,8 @@ if (!isset($dirlisting[$listing_start]))
 				<label for="a"><?php echo $messages["402"];?></label>
 				<input class="mediumfield" name="playlistformname" type="text" value="<?php if ($_GET['listname'] == "bmV3IHBsYXlsaXN0LmxzdA==") { echo "demoplaylistname"; } else { echo base64_decode($_GET['listname']); }?>" <?php if ($_GET['listname'] !== "bmV3IHBsYXlsaXN0LmxzdA==") { echo "disabled=\"disabled\""; }?> />
 			</div>
-			<script src="./js/dhtmlxcommon.js"></script>
-			<script src="./js/dhtmlxtree.js"></script>
+			<script src="js/dhtmlxcommon.js"></script>
+			<script src="js/dhtmlxtree.js"></script>
             <div id="playlist_table_id">
                 <div id="playlist_left">
                     <h4>Ihr Dateibrowser</b></h4>
