@@ -616,7 +616,7 @@ if (count($notifi) > 0) {
 }
 if (count($correc) > 0) {
     foreach ($correc as $correc_cont)
-       //  $correc_list .= "<div class=\"correct\">" . $correc_cont . "</div>";         // War mal die meldung Login erfolgreich!
+         $correc_list .= "<div class=\"correct\">" . $correc_cont . "</div>";
     echo ($correc_list);
 }
 echo '<section id="content">';
