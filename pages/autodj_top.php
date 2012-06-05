@@ -78,7 +78,7 @@ if (isset($_GET['id'])) {
 			else {
 				$serverdata = mysql_query("SELECT * FROM servers WHERE id='".$_GET['id']."' AND portbase='".mysql_result($radioport,0)."'");
 				$ini_content = "";
-				$ini_content .= "playlistfile=".$setting['dir_to_cpanel']."temp/".mysql_result($radioport,0)."/playlist/".strip_tags(ereg_replace("/","", $_POST['pllist']))."\n";
+				$ini_content .= "playlistfile=".$setting['dir_to_cpanel']."temp/".mysql_result($radioport,0)."/playlist/".strip_tags(str_replace('/', '', $_POST['pllist']))."\n";
 				foreach(mysql_fetch_array($serverdata) as $field => $value) {
 					if (!is_numeric($field) && $field != "id" && $field != "owner" && $field!="maxuser" && $field!="portbase" && $field!="adminpassword" && $field!="sitepublic" && $field!="realtime" && $field!="screenlog" && $field!="showlastsongs" && $field!="tchlog" && $field!="weblog" && $field!="w3cenable" && $field!="w3clog" && $field!="srcip" && $field!="destip" && $field!="yport" && $field!="namelookups" && $field!="relayport" && $field!="relayserver" && $field!="autodumpusers" && $field!="autodumpsourcetime" && $field!="contentdir" && $field!="introfile" && $field!="titleformat" && $field!="publicserver" && $field!="allowrelay" && $field!="allowpublicrelay" && $field!="metainterval" && $field!="suspended" && $field!="abuse" && $field!="pid" && $field!="autopid" && $field!="webspace") {
 						$ini_content .= $field."=".$value."\n";
@@ -158,4 +158,3 @@ if (isset($_GET['id'])) {
 		$errors[] = "<h2>".$messages["337"]."</h2>";
 	}
 }
-?>

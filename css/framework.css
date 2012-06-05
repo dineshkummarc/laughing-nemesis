@@ -337,8 +337,6 @@ header a, #header a {
 	display: inline;
 }
 .logo {
- margin: 
- float: left;
 	width: 335px;
 	margin: 0px 0 0 13px;
 	float: left;
@@ -1469,7 +1467,7 @@ div.wrapper div#nyroModalContent {
 	margin: 0 !important;
 }
 
-#playlist_files th, #playlist_available th { th {
+#playlist_files th, #playlist_available th {
 	background: none !important;
 	border: 0 !important;
 	color:#111;

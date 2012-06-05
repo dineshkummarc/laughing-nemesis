@@ -60,4 +60,3 @@ if (isset($_POST['submit'])) {
 		$errors[] = "<h2>".$messages["85"]."</h2>";
 	}
 }
-?>

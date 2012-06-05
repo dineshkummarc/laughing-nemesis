@@ -55,4 +55,3 @@ if ($user_level == "Super Administrator") {
 		}
 	}
 }
-?>

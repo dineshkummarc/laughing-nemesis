@@ -32,13 +32,8 @@ function shoutcastcheck($host, $port2, $wait_sec) {
 	if ($fp) {
 		fputs($fp, "GET / HTTP/1.0\r\nUser-Agent:AmIoffOrOn\r\n\r\n");
 		$ret = fgets($fp, 255);
-		if (eregi("200", $ret)) {
-			return true;
-		}
-		else {
-			return false;
-		}
 		fclose($fp);
+		return strpos($ret, '200') !== false;
 	}
 	else {
 		return false;

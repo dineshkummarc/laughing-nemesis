@@ -44,7 +44,7 @@ if((!empty($_FILES["uploaded_file"])) && ($_FILES['uploaded_file']['error'] == 0
 	else {
 		$port = $_GET['portbase'];
 	}
-	$port = strip_tags(ereg_replace('/','', $port));
+	$port = strip_tags(str_replace('/', '', $port));
 	$selectowner = mysql_query("SELECT * FROM servers WHERE portbase='".$port."' AND owner='".$_SESSION['username']."'");
 	if (mysql_num_rows($selectowner)==1) {
 		$port=$port;
@@ -199,8 +199,8 @@ else {
 		}
 	}
 	$database_space = mysql_query("SELECT * FROM servers WHERE portbase='".$port."'") or die ();
-	$data = mysql_fetch_array($database_space); 
-	$port = strip_tags(ereg_replace('/','', $port));
+	$data = mysql_fetch_array($database_space);
+	$port = strip_tags(str_replace('/', '', $port));
 	if (file_exists("./pages/uploads/".$port."/")) {
 		$dir = "./pages/uploads/".$port."/";
 		$filesize = 0;
@@ -246,4 +246,3 @@ if (isset($_GET['playlist']) or is_numeric($_GET['playlist'])) {
 	header('Location: content.php?include=music&error=playlist');
 	die ();
 }
-?>

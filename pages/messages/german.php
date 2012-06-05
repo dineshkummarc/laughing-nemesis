@@ -762,5 +762,4 @@ $messages["dd16"]		=		"Capatchaabfrage aus";
 //
 //	language credit
 $messages["564"]	=		"<a href=\"http://www.streamerspanel.com\">Translated by djcrackhome</a>";
-$messages["564"]	=		'Streamers Panel | djcrackhome | Dave | <a href="http://www.streamerpanel.com">http://www.streamerpanel.com</a> | <a href="http://www.nagualmedia.de/">Design	by Zephon</a>'
-?>
+$messages["564"]	=		'Streamers Panel | djcrackhome | Dave | <a href="http://www.streamerpanel.com">http://www.streamerpanel.com</a> | <a href="http://www.nagualmedia.de/">Design	by Zephon</a>';

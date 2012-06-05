@@ -51,7 +51,7 @@ else {
 	die ();
 }
 if (($_GET['indiv'] == "0") && (isset($_GET['listname'])) && ($_GET['delete'] == "1")) {
-	$deletefiledecoded = strip_tags(ereg_replace("/","", base64_decode($_GET['listname'])));
+	$deletefiledecoded = strip_tags(str_replace('/', '', base64_decode($_GET['listname'])));
 	if (file_exists("./temp/".$port."/playlist/".$deletefiledecoded."")) {
 		unlink("./temp/".$port."/playlist/".$deletefiledecoded."");
 		$correc[] = "<h2>".$messages["407"]."</h2>";
@@ -74,7 +74,7 @@ if ($_GET['delete'] !== "1") {
 	if ((isset($_POST['arv'])) && (isset($_GET['listname']))) {
 		if ($_GET['new'] == "1") {
 			if ($_POST['playlistformname'] !== "bmV3IHBsYXlsaXN0LmxzdA==") {
-				$playlistfilecreatename = strip_tags(ereg_replace("/","", $_POST['playlistformname']));
+				$playlistfilecreatename = strip_tags(str_replace('/', '', $_POST['playlistformname']));
 				if (!file_exists("./temp/".$port."/playlist/".$playlistfilecreatename.".lst")) {
 					$playlistfilecreate = fopen("./temp/".$port."/playlist/".$playlistfilecreatename.".lst", 'w') or $errors[] = "<h2>".$messages["411"]."</h2>";
 					fclose($playlistfilecreate);
@@ -148,4 +148,3 @@ else {
 	if (!isset($dirlisting[$listing_start]))
 		$errors[] = "<h2>".$messages["421"]."</h2>";
 }
-?>

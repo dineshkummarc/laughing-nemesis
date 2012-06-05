@@ -53,4 +53,3 @@ if ($_GET['error']=="dirlisting") {
 if ($_GET['error']=="sc_trans_access") {
 	$correc[] = "<h2>".$messages["390"]."</h2>";
 }
-?>

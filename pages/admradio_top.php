@@ -298,4 +298,3 @@ if ($_GET['action'] == "update") {
 		die();
 	}
 }
-?>

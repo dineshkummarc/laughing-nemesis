@@ -164,4 +164,3 @@ if (isset($_GET['manage'])) {
 		}
 	}
 }
-?>

@@ -50,7 +50,7 @@ else {
 }
 // Thanks to CWH Underground, should be good now
 // That is the fix for http://www.milw0rm.com/exploits/5813
-$id=ereg_replace("/","", $id);
+$id = str_replace('/', '', $id);
 $id=strip_tags($id);
 if ($id == "error") {
 	echo "<h2>".$messages["50"]."</h2>";
@@ -63,4 +63,4 @@ else {
 		<h3>".$messages["53"].": ".nl2br($notice['message'])."</h3>
 		<p>[".$notice['ip']."]</p>";
 }
-?>
+
