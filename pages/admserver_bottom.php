@@ -58,7 +58,7 @@ if (stripos($_SERVER['PHP_SELF'], 'content.php') === false) {
 					</div>
 					<div class="input_field">
 						<label for="a"><?php echo $messages["199"];?></label>
-						<input class="mediumfield" name="ssh_pass" type="text" value="<?php echo base64_decode($setting['ssh_pass']);?>" />
+						<input class="mediumfield" name="ssh_pass" type="password" value="<?php echo base64_decode($setting['ssh_pass']);?>" />
 						<span class="field_desc"><?php echo $messages["200"];?></span>
 					</div>
 					<div class="input_field">

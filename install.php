@@ -302,7 +302,7 @@ else {
                     </div>
                     <div class="input_field">
                         <label for="a"><?php echo $messages["i67"];?></label>
-                        <input type="text" name="server_sshpass" class="mediumfield" />
+                        <input type="password" name="server_sshpass" class="mediumfield" />
                         <span class="field_desc"><?php echo $messages["i66"];?></span>
                     </div>
                     <div class="input_field">
