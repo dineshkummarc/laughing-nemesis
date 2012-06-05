@@ -41,7 +41,7 @@ if (isset($_POST['sql_dns'])) {
             $db_password = "'.$_POST['sql_pass'].'";
             $database = "'.$_POST['sql_daba'].'";
             ';
-            $datei = fopen("database2.php","w");
+            $datei = fopen("database.php","w");
             fwrite($datei, $dbconfig);
 
             if(!mysql_query("CREATE TABLE `headlines` ( `id` int(11) NOT NULL auto_increment, `username` varchar(100) NOT NULL default '', `title` varchar(100) NOT NULL default '', `text` text NOT NULL, PRIMARY KEY  (`id`)) ENGINE=MyISAM AUTO_INCREMENT=11 DEFAULT CHARSET=utf8 AUTO_INCREMENT=11 ")){ $errors[] = "<h2>MySQL: headlines could not be created!</h2>";}
