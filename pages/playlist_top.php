@@ -24,7 +24,7 @@
  * @since      File available since Release 3.2 public-beta
  */
 
-if (!eregi("content.php", $_SERVER['PHP_SELF'])) {
+if (stripos($_SERVER['PHP_SELF'], 'content.php') === false) {
     die ("You can't access this file directly...");
 }
 

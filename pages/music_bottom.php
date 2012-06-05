@@ -30,7 +30,7 @@
 //	./pages/music_bottom.php
 //	
 
-if (!eregi("content.php", $_SERVER['PHP_SELF'])) {
+if (stripos($_SERVER['PHP_SELF'], 'content.php') === false) {
     die ("You can't access this file directly...");
 }
 
