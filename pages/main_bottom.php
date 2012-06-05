@@ -1,8 +1,8 @@
 <?PHP
-//	Shoutcast Admin Panel 3.2
+//	Streamers Admin Panel 3.2
 //	djcrackhome & WallCity-Server Coop.
 //	GNU License 
-//	http://www.shoutcastadmin.info
+//	http://www.stremerspanel.com
 ///////////////////////////////////////////////
 //	./pages/main_bottom.php
 //	
@@ -12,8 +12,6 @@ if (!eregi("content.php", $_SERVER['PHP_SELF'])) {
 }
 
 ?>
-<div id="content">
-	<div class="box">
 		<h2><?php echo $messages["358"];?></h2>
 		<div class="main_top_menu">
 			<div class="main_short">
@@ -49,12 +47,16 @@ if (!eregi("content.php", $_SERVER['PHP_SELF'])) {
 					<span><?php if ($user_level=="Super Administrator") { echo '<a href="content.php?include=admuser">'; }?><?php if ($user_level!="Super Administrator") { echo "<p>("; }?><?php echo $messages["366"];?><?php if ($user_level!="Super Administrator") { echo ")</p>"; }?><?php if ($user_level=="Super Administrator") { echo '</a>'; }?></span>
 				</div>
 			</div>
-			<div class="main_right">
+			<aside class="main_right">
 				<h2><?php echo $messages["367"];?></h2>
 				<p><?php echo $messages["368"];?></p>
 				<p><?php echo $messages["369"];?></p>
-			</div>
+			</aside>
+			<div class="clear"> </div>
 		</div>
+		      <div class="listing_menu">
+		         <div class="clear"> </div>
+	          </div>
 		<?php
 		if ($user_level=="Super Administrator")	{
 			echo "<h2>".$messages["370"]."</h2>
@@ -79,5 +81,3 @@ if (!eregi("content.php", $_SERVER['PHP_SELF'])) {
 				</table>";
 		}
 		?>
-	</div>
-</div>

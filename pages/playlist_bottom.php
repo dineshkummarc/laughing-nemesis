@@ -1,8 +1,8 @@
 <?PHP
-//	Shoutcast Admin Panel 3.2
+//	Streamers Admin Panel 3.2
 //	djcrackhome & WallCity-Server Coop.
 //	GNU License 
-//	http://www.shoutcastadmin.info
+//	http://www.stremerspanel.com
 ///////////////////////////////////////////////
 //	./pages/playlist_bottom.php
 //	
@@ -25,8 +25,6 @@ $dirlisting = @scandir("./temp/".$port."/playlist") or $errors[] = "";
 if (!isset($dirlisting[$listing_start]))
 	$errors[] = "";
 ?>
-<div id="content">
-	<div class="box">
 		<h2><?php echo $messages["391"];?> <?php echo $port;?></h2>
 		<div class="tool_top_menu">
 			<div class="main_shorttool"><?php echo $messages["392"];?></div>
@@ -66,8 +64,8 @@ if (!isset($dirlisting[$listing_start]))
 				<label for="a"><?php echo $messages["402"];?></label>
 				<input class="mediumfield" name="playlistformname" type="text" value="<?php if ($_GET['listname'] == "bmV3IHBsYXlsaXN0LmxzdA==") { echo "demoplaylistname"; } else { echo base64_decode($_GET['listname']); }?>" <?php if ($_GET['listname'] !== "bmV3IHBsYXlsaXN0LmxzdA==") { echo "disabled=\"disabled\""; }?> />
 			</div>
-			<script src="js/dhtmlxcommon.js"></script>
-			<script src="js/dhtmlxtree.js"></script>
+			<script src="./js/dhtmlxcommon.js"></script>
+			<script src="./js/dhtmlxtree.js"></script>
             <div id="playlist_table_id">
                 <div id="playlist_left">
                     <h4>Ihr Dateibrowser</b></h4>
@@ -101,5 +99,3 @@ if (!isset($dirlisting[$listing_start]))
 			<input type="button" name="clear" onClick="clearPlaylist()" class="submit" value="<?php echo $messages["406"];?>" />
 		</form>
         <?php }?>
-	</div> 
-</div>

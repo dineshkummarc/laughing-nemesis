@@ -1,8 +1,8 @@
 <?PHP
-//	Shoutcast Admin Panel 3.2
+//	Streamers Admin Panel 3.2
 //	djcrackhome & WallCity-Server Coop.
 //	GNU License 
-//	http://www.shoutcastadmin.info
+//	http://www.stremerspanel.com
 ///////////////////////////////////////////////
 //	./pages/upload_bottom.php
 //	
@@ -12,8 +12,6 @@ if (!eregi("content.php", $_SERVER['PHP_SELF'])) {
 }
 
 ?>
-<div id="content">
-	<div class="box">
 		<h2><?php echo $messages["525"];?> <?php echo $port?></h2>
 		<div class="contact_top_menu">
 			<div class="tool_top_menu">
@@ -46,12 +44,6 @@ if (!eregi("content.php", $_SERVER['PHP_SELF'])) {
 								echo '-'.$negative_background_pos.'px 0px;"></div></td>';
 								?>
 						    </tr>
-							<tr class="upload_table">
-								<td class="subnav_child"><?php echo $messages["534"];?></td>
-								<td class="upload_table">~ MB</td>
-								<td class="upload_table">~ MB</td>
-								<td><div class="upload_table_show"></div></td>
-							</tr>
 							<tr class="upload_table">
 								<td class="subnav_child"><?php echo $messages["535"];?></td>
 								<td colspan="3" class="upload_table"><?php echo "".ini_get('upload_max_filesize')."B";?></td>
@@ -128,5 +120,3 @@ if (!eregi("content.php", $_SERVER['PHP_SELF'])) {
 				?>
 			</ul>
 		</div>
-	</div>
-</div>

@@ -1,8 +1,8 @@
 <?PHP
-//	Shoutcast Admin Panel 3.2
+//	Streamers Admin Panel 3.2
 //	djcrackhome & WallCity-Server Coop.
 //	GNU License 
-//	http://www.shoutcastadmin.info
+//	http://www.stremerspanel.com
 ///////////////////////////////////////////////
 //	./pages/autodj_bottom.php
 //	
@@ -12,8 +12,6 @@ if (!eregi("content.php", $_SERVER['PHP_SELF'])) {
 }
 
 if ($_GET['action'] !== "edit") {?>
-<div id="content">
-	<div class="box">
 		<h2><?php echo $messages["277"];?></h2>
 		<div class="contact_top_menu">
 			<div class="tool_top_menu">
@@ -45,7 +43,7 @@ if ($_GET['action'] !== "edit") {?>
 									<tr>
 									<td><a href="http://'.$setting['host_add'].':'.$data['portbase'].'/" target="_blank">'.$setting['host_add'].'</a></td>
 									<td><a href="http://'.$setting['host_add'].':'.$data['portbase'].'/" target="_blank">'.$data['portbase'].'</a></td>
-									<td><select name="pllist" class="playlistselect">';
+									<td>';
 								define('entries_per_page',100);
 								if (!isset($_GET['filecount']) or !is_numeric($_GET['filecount'])) $offset = 1;
 								else $offset = $_GET['filecount'];
@@ -58,11 +56,15 @@ if ($_GET['action'] !== "edit") {?>
 								$listing_end = $offset * entries_per_page + 2;
 								$dirlisting = @scandir("./temp/".$data['portbase']."/playlist/") or $errors[] = "";
 								if (!isset($dirlisting[$listing_start])) $errors[] = "";
+echo '<select name="pllist" class="playlistselect"';
+if (count($dirlisting) === 2) echo ' disabled';
+echo '>';
 								for($i=$listing_start;$i<=$listing_end;$i++) {
 									if (($dirlisting[$i]!=".") and ($dirlisting[$i]!="..") and ($dirlisting[$i]!="")) {
 										echo "<option class=\"playlistselectdrop\" value=\"".$dirlisting[$i]."\">".$dirlisting[$i]."</option>";
 									}
 								}
+if (count($dirlisting) === 2) echo "<option class=\"playlistselectdrop\" value=\"\">Keine Playlisten verf&uuml;gbar!</option>";
 								echo '</select>
 									</td>
 									<td><a class="selector" href="javascript:document.sc_transform'.$data['portbase'].'.submit()">'.$messages["285"].'</a></td>
@@ -95,13 +97,9 @@ if ($_GET['action'] !== "edit") {?>
 				?>
 			</ul>
 		</div>
-	</div> 
-</div>
 <?php
 } else {
 ?>
-<div id="content">
-	<div class="box">
 		<h2><?php echo $messages["288"];?> <?php echo $formedit_port;?></h2>
 		<div class="contact_top_menu">
 			<div class="tool_top_menu">
@@ -151,7 +149,10 @@ if ($_GET['action'] !== "edit") {?>
 					</div>
 					<div class="input_field">
 						<label for="a8"><?php echo $messages["307"];?></label>
-						<input class="shortfield" name="shuf" type="text" value="<?php echo $formedit_shuf;?>" maxlength="1" />
+                        <select class="formselect_loca" name="shuf">
+                            <option value="1"<?php if ($formedit_shuf=='1') echo " selected=\"selected\"";?>><?php echo $messages["dd1"]; ?></option>
+                            <option value="0"<?php if ($formedit_shuf=='0') echo " selected=\"selected\"";?>><?php echo $messages["dd2"]; ?></option>
+                        </select>
 						<span class="field_desc"><?php echo $messages["308"];?></span>
 					</div>
 					<div class="input_field">
@@ -161,7 +162,10 @@ if ($_GET['action'] !== "edit") {?>
 					</div>
 					<div class="input_field">
 						<label for="a11"><?php echo $messages["311"];?></label>
-						<input class="shortfield" name="crom" type="text" value="<?php echo $formedit_crom;?>" maxlength="1" />
+                        <select class="formselect_loca" name="crom">
+                            <option value="1"<?php if ($formedit_crom=='1') echo " selected=\"selected\"";?>><?php echo $messages["dd3"]; ?></option>
+                            <option value="0"<?php if ($formedit_crom=='0') echo " selected=\"selected\"";?>><?php echo $messages["dd4"]; ?></option>
+                        </select>
 						<span class="field_desc"><?php echo $messages["312"];?></span>
 					</div>
 					<div class="input_field">
@@ -176,19 +180,25 @@ if ($_GET['action'] !== "edit") {?>
 					</div>
 					<div class="input_field">
 						<label for="a14"><?php echo $messages["317"];?></label>
-						<input class="shortfield" name="uid3" type="text" value="<?php echo $formedit_uid3;?>" maxlength="1" />
+                        <select class="formselect_loca" name="uid3">
+                            <option value="1"<?php if ($formedit_uid3=='1') echo " selected=\"selected\"";?>><?php echo $messages["dd5"]; ?></option>
+                            <option value="0"<?php if ($formedit_uid3=='0') echo " selected=\"selected\"";?>><?php echo $messages["dd6"]; ?></option>
+                        </select>
 						<span class="field_desc"><?php echo $messages["318"];?></span>
 					</div>
 					<div class="input_field">
 						<label for="a15"><?php echo $messages["319"];?></label>
-						<input class="shortfield" name="publ" type="text" value="<?php echo $formedit_publ;?>" maxlength="1" />
+                        <select class="formselect_loca" name="publ">
+                            <option value="1"<?php if ($formedit_publ=='1') echo " selected=\"selected\"";?>><?php echo $messages["dd7"]; ?></option>
+                            <option value="0"<?php if ($formedit_publ=='0') echo " selected=\"selected\"";?>><?php echo $messages["dd8"]; ?></option>
+                        </select>
 						<span class="field_desc"><?php echo $messages["320"];?></span>
 					</div>
-					<div class="input_field">
-						<label for="a5"><?php echo $messages["321"];?></label>
-						<input class="shortfield" name="chan" type="text" value="<?php echo $formedit_chan;?>" maxlength="1"/>
-						<span class="field_desc"><?php echo $messages["322"];?></span>
-					</div>
+                    <div class="input_field">
+                        <label for="a5"><?php echo $messages["321"];?></label>
+                        <input class="shortfield" name="chan" type="text" value="<?php echo $formedit_chan;?>" maxlength="1"/>
+                        <span class="field_desc"><?php echo $messages["322"];?></span>
+                    </div>
 					<div class="input_field">
 						<label for="a16"><?php echo $messages["323"];?></label>
 						<input class="mediumfield" name="maim" type="text" value="<?php echo $formedit_maim;?>" />
@@ -209,6 +219,4 @@ if ($_GET['action'] !== "edit") {?>
 				</fieldset>
 			</form>
 		</div>
-	</div>
-</div>
 <?php } ?>

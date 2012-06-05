@@ -1,26 +1,107 @@
 <?PHP
-//	Shoutcast Admin Panel 3.2
+//	Streamers Admin Panel 3.2
 //	djcrackhome & WallCity-Server Coop.
-//	GNU License 
-//	http://www.shoutcastadmin.info
+//	GNU License
+//	http://www.stremerspanel.com
 ///////////////////////////////////////////////
 //	./pages/messages/german.php
-//	
+//
 
 //	Translated by: Sebastian Graebner
 //	GERMAN LANGUAGE FILES
 
-//	
-//	
-//	General Variables
-$messages["g1"]		=		"Die Verbindung zur Datenbank konnte nicht hergestellt werden!";
-$messages["g2"]		=		"Die Datenbank konnte nicht ausgew&auml;hlt werden!";
-$messages["g3"]		=		"Die Seite konnte nicht gefunden werden, bitte kontaktieren Sie den Admin";
-$messages["g4"]		=		"Die News konnten nicht aus der Datenbank geladen werden!";
-$messages["g5"]		=		"Die Einstellungen konnten nicht aus der Datenbank geladen werden!";
 
-//	
-//	
+//
+//
+//  ./install.php
+$messages["i0"]		=		"SAP AFTER INSTALL GREETINGS MESSAGE ";                                                     ///////////////// MUST BE EDIT
+$messages["i1"]		=		"Keine Verbindung zur Datenbank!";
+$messages["i2"]		=		'MySQL: notices konnte nicht angelegt werden!';
+$messages["i3"]		=		'MySQL: servers konnte nicht angelegt werden!';
+$messages["i4"]		=		'MySQL: settings konnte nicht angelegt werden!';
+$messages["i5"]		=		'MySQL: users konnte nicht angelegt werden!';
+$messages["i6"]		=		'MySQL: notices Inhalt kann nicht eingefügt werden!';
+$messages["i7"]		=		'MySQL: notices Inhalt kann nicht eingefügt werden!';
+$messages["i7"]		=		'MySQL: settings Inhalt kann nicht eingefügt werden!';
+$messages["i8"]		=		'MySQL: userInhalt kann nicht eingefügt werden!';
+$messages["i9"]		=		'Installation erfolgreich! Zum Panel';
+$messages["i10"]	=       'Installation vom Streamers Panel 3.2';
+$messages["i11"]	=		'INSTALLATION';
+$messages["i12"]	=		'Viel Spaß!';
+$messages["i13"]	=		'PHP Erweiterungen:';
+$messages["i14"]	=		'SSH2 nicht gefunden!';
+$messages["i15"]	=		'SSH2 OK';
+$messages["i16"]	=		'MySql nicht gefunden!';
+$messages["i17"]	=		'MySql Ok';
+$messages["i18"]	=		'PHP safe mode on!';
+$messages["i19"]	=		'PHP safe mode off';
+$messages["i20"]	=		'max_upload_size zu gering!';
+$messages["i21"]	=		'max_upload_size OK';
+$messages["i22"]	=		'Datei database.php OK';
+$messages["i23"]	=		'Datei database.php besitzt nicht die erforderlichen Rechte!';
+$messages["i24"]	=		'Ordner Zugriffsrecht OK';
+$messages["i25"]	=		'Ordner Zugriffsrecht "page" OK!';
+$messages["i26"]	=		'Ordner Zugriffsrecht "temp" OK!';
+$messages["i27"]	=		'Ordner Zugriffsrecht "pages" FALSCH ';
+$messages["i28"]	=		'Ordner Zugriffsrecht "temp" FALSCH';
+$messages["i29"]	=		'Information';
+$messages["i30"]	=		'User IP';
+$messages["i31"]	=		'Server IP';
+$messages["i32"]	=		'Panel Version';
+$messages["i33"]	=		'Wilkommen zur Installation von Streamers Admin Panel '.$messages["g01"].'';
+$messages["i34"]	=		'Vor der Installation bitte prüfen ob folgende Erweiterungen auf dem Server installiert sind:';
+$messages["i35"]	=		'PHP Version 5 mit der Konfiguration  (safe_mode=&quot;off&quot;)';
+$messages["i36"]	=		'SSH2 als PHP extension';
+$messages["i37"]	=		'PHP auf Apache Server';
+$messages["i38"]	=		'Linux Server (Debian 6 Squeeze empfohlen)';
+$messages["i39"]	=		'Linux: &quot;GNU C Library&quot; (glibc) auf einer 32 Bit Umgebung mit Version 6 oder neuer';
+$messages["i40"]	=		'Linux: Sudo wird benötigt';
+$messages["i41"]	=		'MySQL Datenbank Server';
+$messages["i42"]	=		'Hinweis';
+$messages["i43"]	=		'In dieser Box, erhalten Sie Informationen zur Bedinung';
+$messages["i44"]	=		'MySQL Kofiguration';
+$messages["i45"]	=		'MySQL Server';
+$messages["i46"]	=		'Adresse der MySQL Server ( meistens localhost)';
+$messages["i47"]	=		'MySQL Benutzername';
+$messages["i48"]	=		'';//Username of MySQL
+$messages["i49"]	=		'MySQL Passwort';//MySQL Paswort
+$messages["i50"]	=		'Datenbankname';
+$messages["i51"]	=		'';// Database Name for MySQL
+$messages["i52"]	=		'Admin Account';
+$messages["i53"]	=		'Admin Benutzername';
+$messages["i54"]	=		'';//Enter Admin Username for Panel
+$messages["i55"]	=		'Admin Paswort';
+$messages["i56"]	=		'';//Enter Admin Username for Panel
+$messages["i57"]	=		'Server Einstellungen';
+$messages["i58"]	=		'Server Pfad zum Panel';
+$messages["i59"]	=		'';//The full path the Panel is located
+$messages["i60"]	=		'IP oder Domain vom Server';
+$messages["i61"]	=		'';// The IP or Domain of this Server
+$messages["i62"]	=		'Server Name';
+$messages["i63"]	=		'Name des Servers';
+$messages["i64"]	=		'SSH Verbindungs Einstellung';
+$messages["i65"]	=		'SSH Benutzername';
+
+$messages["i67"]	=		'SSH Passwort';
+$messages["i68"]	=		'SSH Port';
+$messages["i69"]	=		'Sprache';
+$messages["i70"]	=		'SAP Sprache';
+$messages["i71"]	=		'Sprache der Benutzeroberfläche';
+$messages["i172"]	=		'Überprüfung der Vorraussetzung zur Installation';
+$messages["i66"]	=		'';// SSH USERNAME
+$messages["i666"]	=		'';// SSH USERNAME
+//
+//
+//	General Variables
+$messages["g0"]		=		"Streamers Admin Panel - ".$messages["g01"]."";
+$messages["g01"]		=   "3.2";
+$messages["g1"]		=		"Es konnte keine Verbindug zur Datenbank hergestellt werden!";
+$messages["g2"]		=		"Die Datenbank wurde nicht gefunden!";
+$messages["g3"]		=		"Seite nicht gefunden, bitte Administrator Informieren";
+$messages["g4"]		=		"Nachrichten konnten nicht geladen werden!";
+$messages["g5"]		=		"Einstellungen konnten nicht geladen werden!";
+//
+//
 //	./index.php
 $messages["1"]		=		"Die Logindaten wurden nicht korrekt eingegeben!";
 $messages["2"]		=		"Der Captcha Code wurde nicht korrekt eingegeben!";
@@ -36,10 +117,10 @@ $messages["11"]		=		"Captcha Eingabe";
 $messages["12"]		=		"Anmelden";
 $messages["13"]		=		"Zur&uuml;cksetzen";
 $messages["14"]		=		"Weblogin";
-//	
-//	
+//
+//
 //	./content.php
-$messages["15"]		=		"Sie wurden erfolgreich mit Ihren pers&ouml;nlichen Daten in das Panel angemeldet";
+$messages["15"]		=		""; // Sie wurden erfolgreich mit Ihren pers&ouml;nlichen Daten in das Panel angemeldet
 $messages["16"]		=		"Das Installationsverzeichnis des Panels befindet sich noch im Webverzeichnis";
 $messages["17"]		=		"Sie k&ouml;nnen keine Administrationsseiten aufrufen, ohne Administrator-Rechte";
 $messages["18"]		=		"Die Nachricht mit der ID ".$_GET['delmessid']." wurde erfolgreich aus der Datenbank gel&ouml;scht";
@@ -56,7 +137,7 @@ $messages["28"]		=		"Benutzeransicht";
 $messages["29"]		=		"Hauptmenu";
 $messages["30"]		=		"server, seite und stream";
 $messages["31"]		=		"Nachrichtencenter";
-$messages["32"]		=		"&Ouml;ffentliche Server";
+$messages["32"]		=		"Öffentliche Server";
 $messages["33"]		=		"Meine Kontoeinstellungen";
 $messages["34"]		=		"Eigene Radioserver";
 $messages["35"]		=		"AutoDJ";
@@ -74,15 +155,15 @@ $messages["46"]		=		"Benutzer IP";
 $messages["47"]		=		"Server IP";
 $messages["48"]		=		"Version";
 $messages["49"]		=		"Bitte Playlist leeren und dann Daten einf&uuml;gen"; 	// not used anymore, xml error on output
-//	
-//	
+//
+//
 //	./messages.php
 $messages["50"]		=		"Keine Nachricht ausgew&auml;lt!";
 $messages["51"]		=		"Eine Nachricht von";
 $messages["52"]		=		"Betreff";
 $messages["53"]		=		"Mitteilung";
-//	
-//	
+//
+//
 //	./pages/account_bottom.php
 $messages["54"]		=		"Benutzerdaten und Kontoinformationen";
 $messages["55"]		=		"Benutzen Sie diese Seite um Ihre Informationen zu Ihrem Benutzerkonto zu editieren, oder etwas nachzuschauen. Diese Informationen teilen Sie mit dem Administrator dieses Panels. Nur dieser kann Ihre Informationen aufrufen. Sie haben aber auch die M&ouml;glichkeit Ihr pers&ouml;nliches Passwort zu &auml;ndern. Sie k&ouml;nnen jederzeit Ihre Informationen nach Belieben &auml;ndern.";
@@ -104,20 +185,20 @@ $messages["70"]		=		"Ihr Nachname";
 $messages["71"]		=		"E-Mail Adresse";
 $messages["72"]		=		"Ihr angegebene E-Mail Adresse";
 $messages["73"]		=		"Telefonnummer";
-$messages["74"]		=		"Eine Festnetznummer unter der man Sie erreichen kann";
+$messages["74"]		=		""; //Eine Festnetznummer unter der man Sie erreichen kann
 $messages["75"]		=		"Handynummer";
-$messages["76"]		=		"Eine Mobilfunknummer unter der man Sie erreichen kann";
+$messages["76"]		=		"";   //Eine Mobilfunknummer unter der man Sie erreichen kann
 $messages["77"]		=		"Alter";
-$messages["78"]		=		"Ihr Alter f&uuml;r Statistikzwecke";
+$messages["78"]		=		"";//Ihr Alter f&uuml;r Statistikzwecke
 $messages["79"]		=		"Admin Notes";
-$messages["80"]		=		"Notierungen vom Administrator des Panels";
+$messages["80"]		=		""; //Notierungen vom Administrator des Panels
 $messages["81"]		=		"&Auml;ndern";
 $messages["82"]		=		"Bitte &uuml;berpr&uuml;fen Sie die Eingabe der Passw&ouml;rter, diese stimmen nicht &uuml;berein";
 $messages["83"]		=		"Zur &Auml;nderung des Passworts, m&uuml;ssen Sie dies im zweiten Passwort Feld wiederholen";
 $messages["84"]		=		"Ihre Benutzerdaten wurden erfolgreich in die Datenbank &uuml;bertragen";
 $messages["85"]		=		"Ihre Benutzerdaten konnten nicht erfolgreich &uuml;bertragen werden";
-//	
-//	
+//
+//
 //	./pages/admradio_bottom.php
 $messages["86"]		=		"Konfiguration der Shoutcast Server auf diesem Server";
 $messages["87"]		=		"Hier haben Sie die M&ouml;glichkeit Shoutcast Server zu erstellen, bearbeiten, und zu l&ouml;schen. Diese Server k&ouml;nnen Sie auf einen beliebigen Benutzer dieses Panels registrieren. Falls Sie sich entscheiden den Benutzer sp&auml;ter zu &auml;ndern k&ouml;nnen Sie den Server ganz einfach editieren. Hier haben Sie auch die M&ouml;gleichkeit einen AutoDJ, dem Server hinzuzuf&uuml;gen, oder auch zu entziehen.";
@@ -222,8 +303,8 @@ $messages["184"]	=		"Der Server wurde erfolgreich auf der Datenbank und diesem P
 $messages["185"]	=		"Der gew&uuml;nschte Server konnte nicht aus diesem System gel&ouml;scht werden";
 $messages["186"]	=		"Die angegebene ID stimmt mit keinem Server auf diesem Server &uuml;berein";
 $messages["187"]	=		"Das Panel kann den Server nicht starten, bitte den Admin kontaktieren";
-//	
-//	
+//
+//
 //	./pages/admserver_bottom.php
 $messages["188"]	=		"Eigenschaften des Servers";
 $messages["189"]	=		"Hier k&ouml;nnen Sie wichtige Einstellungen des Servers konfigurieren und ver&auml;ndern. Diese wichtige Daten werden f&uuml;r alle Funktionen des Panel ben&ouml;tigt, damit dieses einwandfrei funktionieren kann. Alle diese Konfigurationen sind nur Ihnen, also dem Administrator dieses Panels, einsehbar. Diese k&ouml;nnen nur von Ihnen ver&auml;ndert werden. Wir empfehlen Ihnen also diese Einstellungen mit Vorsicht zu bearbeiten.";
@@ -265,8 +346,8 @@ $messages["224"]	=		"Maximale Auflistungen in der Anzeige";
 $messages["225"]	=		"&Uuml;bernehmen";
 $messages["226"]	=		"Alle Einstellungen wurden erfolgreich ge&auml;ndert und gespeichert";
 $messages["227"]	=		"Ein schwerwiegender Fehler ist bei der Speicherung aufgetreten";
-//	
-//	
+//
+//
 //	./pages/admuser_bottom.php
 $messages["228"]	=		"Benutzereinstellungen f&uuml;r dieses Panel";
 $messages["229"]	=		"Hier k&ouml;nnen Sie alle Benutzer dieses Panels editieren, oder l&ouml;schen. Sie k&ouml;nnen nat&uuml;rlich auch weitere Benutzer dem Panel hinzuf&uuml;gen. Alle diese Einstellungen k&ouml;nnen Sie jederzeit wieder ver&auml;ndern. Administratoren k&ouml;nnen sich nicht l&ouml;schen. Nachdem Sie den Benutzer erfolgreich erstellt haben, empfehlen wir Ihnen diesem einen Server zu registrieren.";
@@ -317,8 +398,8 @@ $messages["273"]	=		"Ein Benutzer kann nicht seinen eigenen Benutzernamen aus de
 $messages["274"]	=		"Ein Administrator kann nur direkt &uuml;ber die Datenbank gel&ouml;scht werden";
 $messages["275"]	=		"Der Benutzer wurde erfolgreich aus der Datenbank und dem System gel&ouml;scht";
 $messages["276"]	=		"Der Benutzer konnte nicht erfolgreich aus dem System gel&ouml;scht werden";
-//	
-//	
+//
+//
 //	./pages/autodj_bottom.php
 $messages["277"]	=		"Shoutcast AutoDJ Konfiguration";
 $messages["278"]	=		"Hier k&ouml;nnen Sie den AutoDJ f&uuml;r Ihre Shoutcast Server konfigurieren. Bitte w&auml;hlen Sie zwischen den Wiedergabelisten die Sie &uuml;ber die MP3 Einstellungen erstellt haben, und klicken sie dann auf Starten. Bei Mausklick auf den gelben Button k&ouml;nnen Sie die Einstellungen f&uuml;r den AutoDJ &auml;ndern, welche den Titel und die Stream-Qualit&auml;t beinhalten. Nat&uuml;rlich k&ouml;nnen Sie diesen auch hiermit beenden.";
@@ -382,8 +463,8 @@ $messages["335"]	=		"Der AutoDJ wurde erfolgreich von diesen Port getrennt und w
 $messages["336"]	=		"Die Konfigurationsdateien f&uuml;r Port";	// $messages["336"] portnumber $messages["336_pre"]
 $messages["336_pre"]=		"wurden erfgolreich aktualisiert";
 $messages["337"]	=		"Diesem Server ist keine AutoDJ Funktion zugewiesen, bitte Admin kontaktieren";
-//	
-//	
+//
+//
 //	./pages/contact_bottom.php
 $messages["338"]	=		"Kontaktm&ouml;glichkeit an den Administrator";
 $messages["339"]	=		"Hier haben Sie die M&ouml;glichkeit, den Administrator des Server zu kontaktieren. Sofern sich die Frage oder das Anliegen um Ihr Produkt oder dem Server handelt, kontaktieren Sie bitte den Admin, andernfalls bitte das Programmiererteam des Panes. Administratoren k&ouml;nnen &uuml;ber dieses Formular Nachrichten verschicken, um damit z.B. andere Admins zu kontaktieren.";
@@ -391,7 +472,7 @@ $messages["340"]	=		"Kontaktformular";
 $messages["341"]	=		"Bei Fragen rund um Ihren Shoutcast Server und dieses Panel k&ouml;nnen Sie hierdr&uuml;ber Ihren Admin kontaktieren.";
 $messages["342"]	=		"Hier haben Sie die M&ouml;glichkeit den Administrator des Servers zu kontaktieren";
 $messages["343"]	=		"Name";
-$messages["344"]	=		"Hier bitte ihren Namen eintragen";
+$messages["344"]	=		""; //Hier bitte ihren Namen eintragen
 $messages["345"]	=		"EMail Adresse";
 $messages["346"]	=		"Keine g&uuml;ltige EMail!";
 $messages["347"]	=		"Eintrag in Ordnung!";
@@ -405,8 +486,8 @@ $messages["354"]	=		"Zur&uuml;cksetzen";
 $messages["355"]	=		"Ihre Nachricht wurde erfolgreich an den Administrator versendet";
 $messages["356"]	=		"Ihre Nachricht konnte leider nicht erfolgreich versendet werden";
 $messages["357"]	=		"Es wurde keine g&uuml;ltige EMail Adresse eingegeben";
-//	
-//	
+//
+//
 //	./pages/main_bottom.php
 $messages["358"]	=		"Schnell&uuml;bersicht auf alle Funktionen";
 $messages["359"]	=		"AutoDJ";
@@ -419,13 +500,13 @@ $messages["365"]	=		"Radioserver";
 $messages["366"]	=		"Kunden";
 $messages["367"]	=		"Hilfsinfomenu";
 $messages["368"]	=		"Hier finden Sie, auch auf allen weiteren Unterseiten, alle Informationen zu der aktuellen Seite.";
-$messages["369"]	=		"Auf dieser Hauptseite k&ouml;nnen Sie durch Schnellstarticons direkt auf die gew&uuml;nschte Funktion kommen.";
+$messages["369"]	=		""; //Auf dieser Hauptseite k&ouml;nnen Sie durch Schnellstarticons direkt auf die gew&uuml;nschte Funktion kommen
 $messages["370"]	=		"Nachrichtencenter";
 $messages["371"]	=		"Keine neue Nachrichten verf&uuml;gbar";
 $messages["372"]	=		"l&ouml;schen";
 $messages["373"]	=		"lesen";
-//	
-//	
+//
+//
 //	./pages/music_bottom.php
 $messages["374"]	=		"Auswahl des Servers f&uuml;r den Upload der MP3 Dateien";
 $messages["375"]	=		"Zur Ausf&uuml;hrung des AutoDJ ben&ouml;tigen Sie Multimedia Dateien, welche &uuml;ber den AutoDJ dann an den jeweiligen Shoutcast Server gesendet werden. Diese k&ouml;nnen Sie hier auf den Server hochladen, und dann als Playlist speichern. Diese werden dann dann nach dem n&auml;chsten AutoDJ-Neustart automatisch geladen. Bitte w&auml;hlen Sie nun hier folgend den jeweiligen Server aus.";
@@ -444,8 +525,8 @@ $messages["387"]	=		"Das Verzeichnis dieses Ports konnte nicht erstellt werden, 
 $messages["388"]	=		"Der Speicherplatz dieses Ports wurde &uuml;berschritten, ein weiterer Upload ist nicht m&ouml;glich";
 $messages["389"]	=		"Der Ordnerinhalt des Ordners dieses Ports konnte nicht ausgelesen werden";
 $messages["390"]	=		"Sie besitzen keine Rechte um diesen Port f&uuml;r AutoDJ zugreifen zu k&ouml;nnen";
-//	
-//	
+//
+//
 //	./pages/playlist_bottom.php
 $messages["391"]	=		"Playlisten Konfiguration f&uuml;r den Shoutcast Port";
 $messages["392"]	=		"Hier k&ouml;nnen Sie die Wiedergabelisten f&uuml;r Ihren AutoDJ zuf&auml;llig mit allen Liedern oder individuell erstellen. Bei einer zuf&auml;lligen Erstellung einer Wiedergabeliste, werden alle Lieder, welche sich zu dem aktuellen Zeitpunkt in Ihrem Musik-Upload Ordner befinden, in die Wiedergabelisten zuf&auml;llig eingef&uuml;gt. Bei einer individuellen Auswahl, k&ouml;nnen Sie Ihre Wiedergabeliste selbst bestimmen.";
@@ -478,8 +559,8 @@ $messages["418"]	=		"Die Playliste konnte nicht gefunden werden, bitte l&ouml;sc
 $messages["419"]	=		"Das Portverzeichnis existiert nicht!";
 $messages["420"]	=		"Das Verzeichnis konnte nicht ausgelesen werden!";
 $messages["421"]	=		"Das Verzeichnis konnte nicht ausgelesen werden!";
-//	
-//	
+//
+//
 //	./pages/public_bottom.php
 $messages["422"]	=		"&Ouml;ffentliche Server";
 $messages["423"]	=		"Alle Benutzer dieses Panels, welche einen Zugang zu diesem Panel besitzen, sind in der Lage alle hier folgenden Server zu sehen. Diese wurden vom Administrator dieses Panels f&uuml;r diese freigegeben. Diese k&ouml;nnen als Beispiel Server oder als Testserver benutzt werden. Falls der	jeweilige	Server	online ist, ist in der Tabelle ein zugeh&ouml;riger Link verf&uuml;gbar, auf den man dann den Stream verfolgen kann.";
@@ -492,8 +573,8 @@ $messages["429"]	=		"Webspeicherplatz";
 $messages["430"]	=		"Es sind keine &Ouml;ffentlichen Server verf&uuml;gbar";
 $messages["431"]	=		"Anh&ouml;ren";
 $messages["432"]	=		"Offline";
-//	
-//	
+//
+//
 //	./pages/server_bottom.php
 $messages["433"]	=		"Konfiguration Ihres Shoutcast Servers";
 $messages["434"]	=		"Hier k&ouml;nnen Sie Ihren Shoutcast Server ausw&auml;hlen um diesen dann zu editieren, starten, oder zu stoppen. Alle folgenden Server wurden Ihrem Benutzernamen zugewiesen. Falls Sie eine Erweiterung des Webspeichers w&uuml;nschen, kontaktieren Sie bitte Ihren Administrator, welcher Ihnen den Speicher erwarten k&ouml;nnte. Bei einem Mausklick auf den gew&auml;hlten Server gelangen Sie direkt auf diesen.";
@@ -586,12 +667,12 @@ $messages["520"]	=		"Die PID des Servers konnte nicht aus der Datenbank gelesen 
 $messages["521"]	=		"Panel hat den Shoutcast Server erfolgreich geschlossen und ist jetzt beendet";
 $messages["522"]	=		"Die Einstellungen wurden erfolgreich in die Datenbank &uuml;bertragen";
 $messages["523"]	=		"Die Einstellungen konnten nicht erfolgreich &uuml;bertragen werden";
-//	
-//	
+//
+//
 //	./pages/update.php
 $messages["524"]	=		"Es ist eine neuere Version f&uuml;r dieses Panel verf&uuml;gbar, bitte aktualisieren";
-//	
-//	
+//
+//
 //	./pages/upload_bottom.php
 $messages["525"]	=		"Dateiupload auf den Shoutcast Port";
 $messages["526"]	=		"Hier k&ouml;nnen Sie ihre MP3 Dateien, welche sp&auml;ter &uuml;ber den AutoDJ an den Shoutcast Server gesendet werden hochladen. Bitte achten Sie dabei das nur der verf&uuml;gbare Speicherplatz daf&uuml;r benutzt werden kann. Bitte beachten Sie auch die Limiterungen der folgend angezeigten Werte. Darunter k&ouml;nnen Sie Ihre Dateien aufgelistet sehen, welche Sie dort downloaden oder auch von Ihrem Speicher l&ouml;schen k&ouml;nnen.";
@@ -634,9 +715,40 @@ $messages["562"]	=		"Das Verzeichnis konnte nicht ausgelesen werden!";
 $messages["563"]	=		"Das Verzeichnis konnte nicht ausgelesen werden!";
 
 
+
+//
+//
+// autodj_bottom.php
+$messages["dd1"]		=		"Zufällige Wiedergabe ein";
+$messages["dd2"]		=		"Zufällige Wiedergabe aus";
+$messages["dd3"]		=		"Crossfade ein";
+$messages["dd4"]		=		"Crossfade aus";
+$messages["dd5"]		=		"ID3 ein Benutzung";
+$messages["dd6"]		=		"ID3 aus Benutzung";
+$messages["dd7"]		=		"Stream öffentlich gezeigt";
+$messages["dd8"]		=		"Stream nicht öffentlich gezeigt";
+
+//
+//
+//admserver_bottom.php
+$messages["dd9"]		=		"Updates werden durchführt";
+$messages["dd10"]		=		"Updates werden unterbunden";
+$messages["dd11"]		=		"AutoDJ Config wird gespeichert";
+$messages["dd12"]		=		"AutoDJ Config wird entfernt";
+$messages["dd13"]		=		"Shoutcast Config ein";
+$messages["dd14"]		=		"Shoutcast Config aus";
+$messages["dd15"]		=		"Capatchaabfrage ein";
+$messages["dd16"]		=		"Capatchaabfrage aus";
+
+
+
+
+
+
+
 //
 //
 //	language credit
-$messages["564"]	=		"<a href=\"http://www.shoutcastadmin.info\">Translated by djcrackhome</a>";
-$messages["565"]	=		'Streamers Panel | djcrackhome | dave | <a href="http://www.streamerpanel.com">http://www.streamersadmin.com</a> | <a href="http://www.nagualmedia.de/">Design	by Zephon</a>';
+$messages["564"]	=		"<a href=\"http://www.streamerspanel.com\">Translated by djcrackhome</a>";
+$messages["564"]	=		'Streamers Panel | djcrackhome | Dave | <a href="http://www.streamerpanel.com">http://www.streamerpanel.com</a> | <a href="http://www.nagualmedia.de/">Design	by Zephon</a>'
 ?>

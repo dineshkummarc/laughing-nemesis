@@ -1,8 +1,8 @@
-<?PHP
-//	Shoutcast Admin Panel 3.2
+﻿<?PHP
+//	Streamers Admin Panel 3.2
 //	djcrackhome & WallCity-Server Coop.
 //	GNU License 
-//	http://www.shoutcastadmin.info
+//	http://www.stremerspanel.com
 ///////////////////////////////////////////////
 //	./pages/admserver_bottom.php
 //	
@@ -12,8 +12,6 @@ if (!eregi("content.php", $_SERVER['PHP_SELF'])) {
 }
 
 ?>
-<div id="content">
-	<div class="box">
 		<h2><?php echo $messages["188"];?> <?PHP echo ($_SERVER['SERVER_ADDR']);?></h2>
 		<div class="contact_top_menu">
 			<div class="tool_top_menu">
@@ -67,11 +65,6 @@ if (!eregi("content.php", $_SERVER['PHP_SELF'])) {
 						<span class="field_desc"><?php echo $messages["208"];?></span>
 					</div>
 					<div class="input_field">
-						<label for="a"><?php echo $messages["209"];?></label>
-						<input class="mediumfield" name="php_mp3" type="text" value="<?php echo $setting['php_mp3'];?>" />
-						<span class="field_desc"><?php echo $messages["210"];?></span>
-					</div>
-					<div class="input_field">
 						<label for="a"><?php echo $messages["211"];?></label>
 						<?php
 						echo '<select class="formselect_loca" name="language">';
@@ -108,47 +101,33 @@ if (!eregi("content.php", $_SERVER['PHP_SELF'])) {
 						<label for="a"><?php echo $messages["215"];?></label>
 
                         <select class="formselect_loca" name="update_check">
-                            <option value="1"<?php if ($setting['update_check']=='1') echo " selected=\"selected\"";?>>Updates werden durchführt</option>
-                            <option value="0"<?php if ($setting['update_check']=='0') echo " selected=\"selected\"";?>>Updates werden unterbunden</option>
+                            <option value="1"<?php if ($setting['update_check']=='1') echo " selected=\"selected\"";?>><?php echo $messages["dd9"]; ?></option>
+                            <option value="0"<?php if ($setting['update_check']=='0') echo " selected=\"selected\"";?>><?php echo $messages["dd10"]; ?></option>
                         </select>
 						<span class="field_desc"><?php echo $messages["216"];?></span>
 					</div>
 					<div class="input_field">
 						<label for="a"><?php echo $messages["217"];?></label>
                         <select class="formselect_loca" name="adj_config">
-                            <option value="1"<?php if ($setting['adj_config']=='1') echo " selected=\"selected\"";?>>AutoDJ Config wird gespeichert</option>
-                            <option value="0"<?php if ($setting['adj_config']=='0') echo " selected=\"selected\"";?>>AutoDJ Config wird entfernt</option>
+                            <option value="1"<?php if ($setting['adj_config']=='1') echo " selected=\"selected\"";?>><?php echo $messages["dd11"]; ?></option>
+                            <option value="0"<?php if ($setting['adj_config']=='0') echo " selected=\"selected\"";?>><?php echo $messages["dd12"]; ?></option>
                         </select>
 						<span class="field_desc"><?php echo $messages["218"];?></span>
 					</div>
 					<div class="input_field">
-						<label for="a"><?php echo $messages["219"];?></label>
-						<input class="mediumfield" name="scs_config" type="text" value="<?php echo $setting['scs_config'];?>" />
+                        <label for="a"><?php echo $messages["219"];?></label>
+                        <select class="formselect_loca" name="scs_config">
+                            <option value="1"<?php if ($setting['scs_config']=='1') echo " selected=\"selected\"";?>><?php echo $messages["dd13"]; ?></option>
+                            <option value="0"<?php if ($setting['scs_config']=='0') echo " selected=\"selected\"";?>><?php echo $messages["dd14"]; ?></option>
+                        </select>
 						<span class="field_desc"><?php echo $messages["220"];?></span>
 					</div>
 					<div class="input_field">
-						<label for="a"><?php echo $messages["221"];?></label>
-
-                        <table>
-                          <tr>
-                            <td style='vertical-align: middle !important;'>
-                              A checkbox defaulting to <strong>checked</strong>
-                            </td>
-                            <td>
-                              <input checked='checked' class='normal' type='checkbox' />
-                            </td>
-                          </tr>
-                          <tr>
-                            <td style='vertical-align: middle !important;'>
-                              A checkbox defaulting to <strong>unchecked</strong>
-                            </td>
-                            <td>
-                              <input class='normal' type='checkbox' />
-                            </td>
-                          </tr>
-                        </table>
-
-						<input class="mediumfield" name="login_captcha" type="text" value="<?php echo $setting['login_captcha'];?>" />
+                        <label for="a"><?php echo $messages["221"];?></label>
+                        <select class="formselect_loca" name="login_captcha">
+                            <option value="1"<?php if ($setting['login_captcha']=='1') echo " selected=\"selected\"";?>><?php echo $messages["dd15"]; ?></option>
+                            <option value="0"<?php if ($setting['login_captcha']=='0') echo " selected=\"selected\"";?>><?php echo $messages["dd16"]; ?></option>
+                        </select>
 						<span class="field_desc"><?php echo $messages["222"];?></span>
 					</div>
 					<div class="input_field">
@@ -160,5 +139,3 @@ if (!eregi("content.php", $_SERVER['PHP_SELF'])) {
 				</fieldset>
 			</form>
 		</div>
-	</div> 
-</div>

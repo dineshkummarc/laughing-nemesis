@@ -1,8 +1,8 @@
 <?PHP
-//	Shoutcast Admin Panel 3.2
+//	Streamers Admin Panel 3.2
 //	djcrackhome & WallCity-Server Coop.
 //	GNU License 
-//	http://www.shoutcastadmin.info
+//	http://www.stremerspanel.com
 ///////////////////////////////////////////////
 //	./pages/contact_bottom.php
 //	
@@ -12,8 +12,6 @@ if (!eregi("content.php", $_SERVER['PHP_SELF'])) {
 }
 
 ?>
-<div id="content">
-	<div class="box">
 		<h2><?php echo $messages["338"];?></h2>
 		<div class="contact_top_menu">
 			<div class="tool_top_menu">
@@ -78,5 +76,3 @@ if (!eregi("content.php", $_SERVER['PHP_SELF'])) {
 				</fieldset>
 			</form>
 		</div>
-	</div>
-</div>

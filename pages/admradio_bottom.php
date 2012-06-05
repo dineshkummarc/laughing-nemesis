@@ -1,8 +1,8 @@
 <?PHP
-//	Shoutcast Admin Panel 3.2
+//	Streamers Admin Panel 3.2
 //	djcrackhome & WallCity-Server Coop.
 //	GNU License 
-//	http://www.shoutcastadmin.info
+//	http://www.stremerspanel.com
 ///////////////////////////////////////////////
 //	./pages/admradio_bottom.php
 //	
@@ -12,8 +12,6 @@ if (!eregi("content.php", $_SERVER['PHP_SELF'])) {
 }
 
 ?>
-<div id="content">
-	<div class="box">
 		<h2><?php echo $messages["86"];?></h2>
 		<div class="contact_top_menu">
 			<div class="tool_top_menu">
@@ -191,7 +189,10 @@ if (!eregi("content.php", $_SERVER['PHP_SELF'])) {
 				</div>
 				<div class="input_field">
 					<label for="a"><?php echo $messages["112"];?></label>
-					<input class="mediumfield" name="sitepublic" type="text" value="<?php if ($_GET['action'] == "update") { echo $updateget_var_t_sitepublic; } else { echo "1"; }?>" />
+                    <select class="formselect_loca" name="sitepublic">
+                        <option value="1"<?php if ($updateget_var_t_sitepublic=='1') echo " selected=\"selected\"";?>>Panel öffentlich</option>
+                        <option value="0"<?php if ($updateget_var_t_sitepublic=='0') echo " selected=\"selected\"";?>>Panel nicht öffentlich</option>
+                    </select>
 					<span class="field_desc"><?php echo $messages["113"];?></span>
 				</div>
 				<div class="input_field">
@@ -232,12 +233,18 @@ if (!eregi("content.php", $_SERVER['PHP_SELF'])) {
 				</div>
 				<div class="input_field">
 					<label for="a"><?php echo $messages["124"];?></label>
-					<input class="mediumfield" name="realtime" type="text" value="<?php if ($_GET['action'] == "update") { echo $updateget_var_t_realtime; } else { echo "1"; }?>" />
+                    <select class="formselect_loca" name="realtime">
+                        <option value="1"<?php if ($updateget_var_t_realtime=='1') echo " selected=\"selected\"";?>>Streaminfos ausgeben</option>
+                        <option value="0"<?php if ($updateget_var_t_realtime=='0') echo " selected=\"selected\"";?>>Streaminfos aus</option>
+                    </select>
 					<span class="field_desc"><?php echo $messages["125"];?></span>
 				</div>
 				<div class="input_field">
 					<label for="a"><?php echo $messages["126"];?></label>
-					<input class="mediumfield" name="screenlog" type="text" value="<?php if ($_GET['action'] == "update") { echo $updateget_var_t_screenlog; } else { echo "1"; }?>" />
+                    <select class="formselect_loca" name="screenlog">
+                    <option value="1"<?php if ($updateget_var_t_screenlog=='1') echo " selected=\"selected\"";?>>Streaminfos ausgeben</option>
+                    <option value="0"<?php if ($updateget_var_t_screenlog=='0') echo " selected=\"selected\"";?>>Streaminfos aus</option>
+                    </select>
 					<span class="field_desc"><?php echo $messages["127"];?></span>
 				</div>
 				<div class="input_field">
@@ -247,17 +254,26 @@ if (!eregi("content.php", $_SERVER['PHP_SELF'])) {
 				</div>
 				<div class="input_field">
 					<label for="a"><?php echo $messages["130"];?></label>
-					<input class="mediumfield" name="tchlog" type="text" value="<?php if ($_GET['action'] == "update") { echo $updateget_var_t_tchlog; } else { echo "Yes"; }?>" />
+                    <select class="formselect_loca" name="tchlog">
+                        <option value="1"<?php if ($updateget_var_t_screenlog=='1') echo " selected=\"selected\"";?>>YP Tracks aufnehmen im Log</option>
+                        <option value="0"<?php if ($updateget_var_t_screenlog=='0') echo " selected=\"selected\"";?>>YP Tracks ignorieren</option>
+                    </select>
 					<span class="field_desc"><?php echo $messages["131"];?></span>
 				</div> 
 				<div class="input_field">
 					<label for="a"><?php echo $messages["132"];?></label>
-					<input class="mediumfield" name="weblog" type="text" value="<?php if ($_GET['action'] == "update") { echo $updateget_var_t_weblog; } else { echo "no"; }?>" />
+                    <select class="formselect_loca" name="weblog">
+                        <option value="1"<?php if ($updateget_var_t_weblog=='1') echo " selected=\"selected\"";?>>Webaktivitäten geloggt </option>
+                        <option value="0"<?php if ($updateget_var_t_weblog=='0') echo " selected=\"selected\"";?>>Webaktivitäten nicht geloggt </option>
+                    </select>
 					<span class="field_desc"><?php echo $messages["133"];?></span>
 				</div>
 				<div class="input_field">
 					<label for="a"><?php echo $messages["134"];?></label>
-					<input class="mediumfield" name="w3cenable" type="text" value="<?php if ($_GET['action'] == "update") { echo $updateget_var_t_w3cenable; } else { echo "Yes"; }?>" />
+                    <select class="formselect_loca" name="w3cenable">
+                        <option value="1"<?php if ($updateget_var_t_w3cenable=='1') echo " selected=\"selected\"";?>>W3C Log ein </option>
+                        <option value="0"<?php if ($updateget_var_t_w3cenable=='0') echo " selected=\"selected\"";?>>W3C Log aus </option>
+                    </select>
 					<span class="field_desc"><?php echo $messages["135"];?></span>
 				</div>
 				<div class="input_field">
@@ -285,7 +301,10 @@ if (!eregi("content.php", $_SERVER['PHP_SELF'])) {
 				</div>
 				<div class="input_field">
 					<label for="a"><?php echo $messages["144"];?></label>
-					<input class="mediumfield" name="namelookups" type="text" value="<?php if ($_GET['action'] == "update") { echo $updateget_var_t_namelookups; } else { echo "0"; }?>" />
+                    <select class="formselect_loca" name="namelookups">
+                        <option value="1"<?php if ($updateget_var_t_namelookups=='1') echo " selected=\"selected\"";?>>DNS erkennung ein</option>
+                        <option value="0"<?php if ($updateget_var_t_namelookups=='0') echo " selected=\"selected\"";?>>DNS erkennung aus </option>
+                    </select>
 					<span class="field_desc"><?php echo $messages["145"];?></span>
 				</div>                    
 				<div class="input_field">
@@ -330,12 +349,18 @@ if (!eregi("content.php", $_SERVER['PHP_SELF'])) {
 				</div>     
 				<div class="input_field">
 					<label for="a"><?php echo $messages["162"];?></label>
-					<input class="mediumfield" name="allowrelay" type="text" value="<?php if ($_GET['action'] == "update") { echo $updateget_var_t_allowrelay; } else { echo "Yes"; }?>" />
+                    <select class="formselect_loca" name="allowrelay">
+                        <option value="1"<?php if ($updateget_var_t_allowrelay=='1') echo " selected=\"selected\"";?>>Relay ein</option>
+                        <option value="0"<?php if ($updateget_var_t_allowrelay=='0') echo " selected=\"selected\"";?>>Relay aus</option>
+                    </select>
 					<span class="field_desc"><?php echo $messages["163"];?></span>
 				</div>            
 				<div class="input_field">
 					<label for="a"><?php echo $messages["164"];?></label>
-					<input class="mediumfield" name="allowpublicrelay" type="text" value="<?php if ($_GET['action'] == "update") { echo $updateget_var_t_allowpublicrelay; } else { echo "Yes"; }?>" />
+                    <select class="formselect_loca" name="allowpublicrelay">
+                        <option value="1"<?php if ($updateget_var_t_allowpublicrelay=='1') echo " selected=\"selected\"";?>>Server öffentlich</option>
+                        <option value="0"<?php if ($updateget_var_t_allowpublicrelay=='0') echo " selected=\"selected\"";?>>Server Privat</option>
+                    </select>
 					<span class="field_desc"><?php echo $messages["165"];?></span>
 				</div> 
 				<div class="input_field">
@@ -348,5 +373,3 @@ if (!eregi("content.php", $_SERVER['PHP_SELF'])) {
 			</form>
 			<?php }?>
 		</div>
-	</div>
-</div>

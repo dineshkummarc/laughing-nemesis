@@ -1,8 +1,8 @@
 <?PHP
-//	Shoutcast Admin Panel 3.2
+//	Streamers Admin Panel 3.2
 //	djcrackhome & WallCity-Server Coop.
 //	GNU License 
-//	http://www.shoutcastadmin.info
+//	http://www.stremerspanel.com
 ///////////////////////////////////////////////
 //	./pages/server_bottom.php
 //	
@@ -22,8 +22,6 @@ $l = $p + $limit;
 $listq = mysql_query("SELECT * FROM servers WHERE owner='".$loginun."' ORDER BY id ASC LIMIT $p,$limit");
 if (!isset($_GET['manage'])) {
 ?>
-<div id="content">
-	<div class="box">
 		<h2><?php echo $messages["433"];?></h2>
 			<div class="contact_top_menu">
 				<div class="tool_top_menu">
@@ -100,15 +98,12 @@ if (!isset($_GET['manage'])) {
 					?>
 				</ul>
 			</div>
-		</div> 
-	</div>
 
 <?php 
 }
 else {
 	?>
-<div id="content">
-	<div class="box">
+
 		<h2><?php echo $messages["444"];?> <?php if ($user_level=="Super Administrator")	{ $portquery = mysql_fetch_object(mysql_query("SELECT portbase FROM servers WHERE id='".$_GET['manage']."'"));	echo $portquery->portbase; } else { $portquery = mysql_fetch_object(mysql_query("SELECT portbase FROM servers WHERE owner='".$loginun."' AND id='".$_GET['manage']."'")); echo $portquery->portbase; }?></h2>
 		<div class="contact_top_menu">
 			<div class="tool_top_menu">
@@ -207,7 +202,5 @@ else {
 				</fieldset>
 			</form>
 		</div>
-	</div>
-</div>
 <?php 
 }?>

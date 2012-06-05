@@ -1,8 +1,8 @@
 <?PHP
-//	Shoutcast Admin Panel 3.2
+//	Streamers Admin Panel 3.2
 //	djcrackhome & WallCity-Server Coop.
 //	GNU License 
-//	http://www.shoutcastadmin.info
+//	http://www.stremerspanel.com
 ///////////////////////////////////////////////
 //	./pages/music_bottom.php
 //	
@@ -38,8 +38,6 @@ else {
 $l = $p + $limit;
 $select = mysql_query("SELECT * FROM servers WHERE owner='".$loginun."' ORDER BY id ASC LIMIT $p,$limit");
 ?>
-<div id="content">
-		<div class="box">
 		<h2><?php echo $messages["374"];?></h2>
 		<div class="contact_top_menu">
 			<div class="tool_top_menu">
@@ -118,5 +116,3 @@ $select = mysql_query("SELECT * FROM servers WHERE owner='".$loginun."' ORDER BY
 				?>
 			</ul>
 		</div>
-	</div> 
-</div>

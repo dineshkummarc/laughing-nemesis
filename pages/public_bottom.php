@@ -1,8 +1,8 @@
 <?PHP
-//	Shoutcast Admin Panel 3.2
+//	Streamers Admin Panel 3.2
 //	djcrackhome & WallCity-Server Coop.
 //	GNU License 
-//	http://www.shoutcastadmin.info
+//	http://www.stremerspanel.com
 ///////////////////////////////////////////////
 //	./pages/public_bottom.php
 //	
@@ -38,8 +38,6 @@ else {
 $l = $p + $limit;
 $select = mysql_query("SELECT * FROM servers WHERE sitepublic='1' ORDER BY id ASC LIMIT $p,$limit");
 ?>
-<div id="content">
-	<div class="box">
 		<h2><?php echo $messages["422"];?></h2>
 			<div class="contact_top_menu">
 				<div class="tool_top_menu">
@@ -125,5 +123,3 @@ $select = mysql_query("SELECT * FROM servers WHERE sitepublic='1' ORDER BY id AS
 				?>
 			</ul>
 		</div>
-	</div>
-</div>

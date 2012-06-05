@@ -1,8 +1,8 @@
 <?PHP
-//	Shoutcast Admin Panel 3.2
+//	Streamers Admin Panel 3.2
 //	djcrackhome & WallCity-Server Coop.
 //	GNU License 
-//	http://www.shoutcastadmin.info
+//	http://www.stremerspanel.com
 ///////////////////////////////////////////////
 //	./pages/update.php
 //
@@ -13,6 +13,6 @@ $url = 'http://update.streamerspanel.com/';
 
 $jsonFile = json_decode(file_get_contents($url));
 
-if (version_compare($currentVersio, $jsonFile->latest, '<')) {
+if (version_compare($currentVersion, $jsonFile->latest, '<')) {
 		$notifi[] = '<h2><a href=" '. $jsonFile->download .'" target="_blank">'.$messages["524"].'</a></h2>';
 }
