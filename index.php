@@ -50,13 +50,13 @@ if (file_exists("./pages/messages/" . $language_setting . ".php")) {
 }
 include "./pages/messages/" . $language_setting . ".php";
 //	if an error occured by logging in, check which login and then echo error
-if ($_GET['login'] == "data") {
+if (isset($_GET['login']) && $_GET['login'] == "data") {
     $error[] = "<h2>" . $messages["1"] . "</h2>";
 }
-if ($_GET['login'] == "captcha") {
+if (isset ($_GET['login']) && $_GET['login'] == "captcha") {
     $error[] = "<h2>" . $messages["2"] . "</h2>";
 }
-if ($_GET['login'] == "logout") {
+if (isset ($_GET['login']) && $_GET['login'] == "logout") {
     $correct[] = "<h2>" . $messages["3"] . "</h2>";
 }
 // if user is already logged in, than redirect to content
@@ -108,16 +108,18 @@ if (isset($loggedin) && $loggedin == TRUE) {
 	</div>
 	<div id="primary_login">
 		<?PHP
-if (count($error) > 0) {
-    foreach ($error as $error_cont)
-        $error_list .= "<div class=\"error_log\">" . $error_cont . "</div>";
-    echo ($error_list);
-}
-if (count($correct) > 0) {
-    foreach ($correct as $correct_cont)
-        $correct_list .= "<div class=\"correct_log\">" . $correct_cont . "</div>";
-    echo ($correct_list);
-}
+        $errors = array();
+        if (count($errors) > 0) {
+            echo array_reduce($errors, function($initial, $value) {
+                return $initial . sprintf('<div class="error">%s</div>', $value);
+            }, '');
+        }
+        $correc = array();
+        if (count($correc) > 0) {
+            echo array_reduce($correc, function($initial, $value) {
+                return $initial . sprintf('<div class="correct">%s</div>', $value);
+            }, '');
+        }
 ?>
         <div id="content">
             <div class="box">

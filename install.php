@@ -207,19 +207,22 @@ else {
 </div>
 <div id="primary">
     <?PHP
-    if (isset($errors) && count($errors) > 0) {
+    $errors = array();
+    $correc = array();
+    $notifi = array();
+    if (count($errors) > 0) {
         echo array_reduce($errors, function($initial, $value) {
             return $initial . sprintf('<div class="error">%s</div>', $value);
         }, '');
     }
 
-    if (isset($notifi) && count($notifi) > 0) {
+    if (count($notifi) > 0) {
         echo array_reduce($notifi, function($initial, $value) {
             return $initial . sprintf('<div class="notifi">%s</div>', $value);
         }, '');
     }
 
-    if (isset($correc) && count($correc) > 0) {
+    if (count($correc) > 0) {
         echo array_reduce($correc, function($initial, $value) {
             return $initial . sprintf('<div class="correct">%s</div>', $value);
         }, '');
