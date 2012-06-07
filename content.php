@@ -51,7 +51,9 @@ if (!isset($_GET['include'])) {
     $include_php = filter_var($_GET['include'], FILTER_SANITIZE_STRING);
 }
 // Logout of Panel
-if ($_GET['login'] == "logout") {
+
+
+if (isset($_GET['login']) && $_GET['login'] == "logout") {
     $loggedin = FALSE;
     session_destroy();
     header('Location: index.php?login=logout');
@@ -196,7 +198,7 @@ if ($include_php == "upload" && isset($_GET['upport'])) {
     die();
 }
 
-if ($_GET['playlist'] == "left") {
+if (isset($_GET['playlist']) && $_GET['playlist']  == "left") {
     if (isset($_GET['portbase'])) {
         $port        = $_GET['portbase'];
         $selectowner = mysql_query("SELECT * FROM servers WHERE portbase='" . $port . "' AND owner='" . $loginun . "'");
@@ -232,7 +234,7 @@ if ($_GET['playlist'] == "left") {
             die();
         }
     }
-} elseif (($_GET['playlist'] == "right") && (isset($_GET['listname']))) {
+} elseif ((isset($_GET['playlist']) && $_GET['playlist'] == "right") && (isset($_GET['listname']))) {
     if (isset($_GET['portbase'])) {
         $port        = $_GET['portbase'];
         $selectowner = mysql_query("SELECT * FROM servers WHERE portbase='" . $port . "' AND owner='" . $loginun . "'");
@@ -318,7 +320,7 @@ if (($include_php == "admserver") || ($include_php == "admradio") || ($include_p
 // check messages on headlines
 $newsq = mysql_query("SELECT * FROM headlines order by id DESC LIMIT 20") or die($messages["g4"]);
 $newsq_quant = mysql_num_rows($newsq);
-if ($user_level == "Super Administrator" && $_GET['action'] == "remove" && isset($_GET['delmessid'])) {
+if ($user_level == "Super Administrator" && (isset($_GET['action']) && $_GET['action']  == "remove" && isset($_GET['delmessid']))) {
     if (mysql_query(" DELETE FROM notices WHERE id='" . $_GET['delmessid'] . "' ")) {
         $correc[] = "<h2>" . $messages["18"] . "</h2>";
     } else {
@@ -347,7 +349,7 @@ $currentVersion = "3.2.1";
 if ($setting['update_check'] == 1 && $include_php == 'main') {
     require_once './pages/update.php';
 }
-if ($_GET['request'] == 'html') {
+if (isset($_GET['request']) && $_GET['request']  == 'html') {
     require_once './pages/' . $include_php . '_bottom.php';
     die();
 }
