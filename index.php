@@ -1,6 +1,6 @@
 <?PHP
 /**
- * Streamers Admin Panel 3.2 - Final
+ * Streamers Admin Panel
  *
  * Originally written by Sebastian Graebner <djcrackhome>
  * Fixed and edited by David Schomburg <dave>
@@ -19,12 +19,15 @@
  * @author     David Schomburg <dave@streamerspanel.com>
  * @copyright  2009-2012  S. Graebner <djcrackhome> D. Schomburg <dave>
  * @license    http://creativecommons.org/licenses/by-sa/3.0/ Creative Commons Attribution-ShareAlike 3.0 Unported License
- * @version    3.2 Final
+ * @version    3.2.1
  * @link       http://www.streamerspanel.com
- * @since      File available since Release 3.2 public-beta
+
  */
 
 session_start();
+// TP TEST
+echo"<div class=error ><h1>WIR ARBEITEN MOMENTAN AN DER </h1>  </div>";
+echo"<div class=error ><h1>VERSION!! DEMO-ZUGANG IST DEAKTIVIERT</h1>  </div>";
 // save random captcha value in browsersession
 $_SESSION['captcha_streamerspanel'] = rand(10000, 99999);
 //	include database

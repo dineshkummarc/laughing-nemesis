@@ -1,7 +1,6 @@
 <?PHP
-
 /**
- * Streamers Admin Panel 3.2 - Final
+ * Streamers Admin Panel
  *
  * Originally written by Sebastian Graebner <djcrackhome>
  * Fixed and edited by David Schomburg <dave>
@@ -20,9 +19,9 @@
  * @author     David Schomburg <dave@streamerspanel.com>
  * @copyright  2009-2012  S. Graebner <djcrackhome> D. Schomburg <dave>
  * @license    http://creativecommons.org/licenses/by-sa/3.0/ Creative Commons Attribution-ShareAlike 3.0 Unported License
- * @version    3.2 Final
+ * @version    3.2.1
  * @link       http://www.streamerspanel.com
- * @since      File available since Release 3.2 public-beta
+
  */
 
 if (!include("database.php"))
@@ -30,6 +29,8 @@ if (!include("database.php"))
 if ($db_host == "" || !isset($db_host))
     die("please reinstall this panel");
 //MySQL Verbindung wird getestet
+
+
 
 $connection = mysql_connect($db_host, $db_username, $db_password) or die("database could not be connected");
 $db = mysql_select_db($database) or die("database could not be selected");
@@ -337,7 +338,7 @@ foreach (mysql_fetch_array($settingsq) as $key => $pref) {
     }
 }
 // update check
-$currentVersion = 3.2;
+$currentVersion = "3.2.1";
 
 
 
@@ -604,6 +605,8 @@ echo $currentVersion;
         <div id="contentload">
         </div>
         <?PHP
+
+
 if (count($errors) > 0) {
     foreach ($errors as $errors_cont)
         $errors_list .= "<div class=\"error\">" . $errors_cont . "</div>";

@@ -7,7 +7,7 @@
  * .box by fading it out, showing a loader image, and fading it back in.
  *
  * @author Sebastian Graebner <info@streamerspanel.com>
- * @version 3.2
+ * @version 3.2.1
  * @package streamerspanel
  */
 $(document).ready(function () {
