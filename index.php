@@ -25,9 +25,6 @@
  */
 
 session_start();
-// TP TEST
-echo"<div class=error ><h1>WIR ARBEITEN MOMENTAN AN DER </h1>  </div>";
-echo"<div class=error ><h1>VERSION!! DEMO-ZUGANG IST DEAKTIVIERT</h1>  </div>";
 // save random captcha value in browsersession
 $_SESSION['captcha_streamerspanel'] = rand(10000, 99999);
 //	include database
