@@ -29,7 +29,7 @@ if (stripos($_SERVER['PHP_SELF'], 'content.php') === false) {
 }
 
 ?>
-		<h2><?php echo $messages["228"];?> <?php echo $port;?></h2>
+		<h2><?php echo $messages["228"];?> <?php if (isset($port)){echo $port;} ?></h2>
 		<div class="tool_top_menu">
 			<div class="main_shorttool"><?php echo $messages["229"];?></div>
 			<div class="main_righttool">
@@ -76,7 +76,7 @@ if (stripos($_SERVER['PHP_SELF'], 'content.php') === false) {
 			?>
 		</ul>
         <?php 
-		if (($_GET['action'] == "edit" && $user_check!=="1") || ($_GET['action'] == "newuser")) {
+		if ((isset($_GET['action']) && $_GET['action'] == "edit" && $user_check!=="1") || (isset($_GET['action']) && $_GET['action'] == "newuser")) {
 			if ($_GET['action'] !== "newuser") {
 				$userq = mysql_query("SELECT * FROM users WHERE id='".$_GET['id']."'");
 				foreach(mysql_fetch_array($userq) as $key => $pref) {

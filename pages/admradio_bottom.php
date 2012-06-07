@@ -104,9 +104,7 @@ if (stripos($_SERVER['PHP_SELF'], 'content.php') === false) {
 				}
 				?>
 			</ul>
-			<?php
-			if (($_GET['action'] == "new") || ($_GET['action'] == "update")) {
-			?>
+            <?php if (isset($_GET['action']) && ($_GET['action'] === 'new' || $_GET['action'] === 'update')): ?>
 			<br />
 			<h2><?php echo $messages["98"];?></h2>
 			<form method="post" action="content.php?include=admradio&<?php if ($_GET['action'] == "new") { echo 'new=server'; } elseif ($_GET['action'] == "update") { echo 'new=update&action=update&view='.$_GET['view'].''; } ?>">
@@ -388,5 +386,5 @@ if (stripos($_SERVER['PHP_SELF'], 'content.php') === false) {
 				<input class="submit" type="submit" value="<?php echo $messages["168"];?>" />
 			</fieldset>
 			</form>
-			<?php }?>
+			<?php endif ?>
 		</div>

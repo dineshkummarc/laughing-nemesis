@@ -73,7 +73,8 @@ if (isset($_POST['sql_dns'])) {
     }
 }
 $cwd = str_replace("\\", "/", getcwd());
-if((count($errors) > 0) && (isset($_POST['sql_dns']))) {
+
+if(isset($errors) && (count($errors) > 0) && (isset($_POST['sql_dns']))) {
     foreach($errors as $errors_cont)
         $errors_list.="<div>".$errors_cont."</div>";
     echo ($errors_list);
@@ -206,21 +207,25 @@ else {
 </div>
 <div id="primary">
     <?PHP
-    if(count($errors) > 0) {
-        foreach($errors as $errors_cont)
-            $errors_list.="<div class=\"error\">".$errors_cont."</div>";
-        echo ($errors_list);
+    if (isset($errors) && count($errors) > 0) {
+        echo array_reduce($errors, function($initial, $value) {
+            return $initial . sprintf('<div class="error">%s</div>', $value);
+        }, '');
     }
-    if(count($notifi) > 0) {
-        foreach($notifi as $notifi_cont)
-            $notifi_list.="<div class=\"notifi\">".$notifi_cont."</div>";
-        echo ($notifi_list);
+
+    if (isset($notifi) && count($notifi) > 0) {
+        echo array_reduce($notifi, function($initial, $value) {
+            return $initial . sprintf('<div class="notifi">%s</div>', $value);
+        }, '');
     }
-    if(count($correc) > 0) {
-        foreach($correc as $correc_cont)
-            $correc_list.="<div class=\"correct\">".$correc_cont."</div>";
-        echo ($correc_list);
+
+    if (isset($correc) && count($correc) > 0) {
+        echo array_reduce($correc, function($initial, $value) {
+            return $initial . sprintf('<div class="correct">%s</div>', $value);
+        }, '');
     }
+
+
 
     ?>
     <div id="content">

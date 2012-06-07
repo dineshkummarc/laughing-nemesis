@@ -28,7 +28,7 @@ if (stripos($_SERVER['PHP_SELF'], 'content.php') === false) {
     die ("You can't access this file directly...");
 }
 
-if ($_GET['action'] !== "edit") {?>
+if (!isset($_GET['action']) || $_GET['action']  !== "edit") {?>
 		<h2><?php echo $messages["277"];?></h2>
 		<div class="contact_top_menu">
 			<div class="tool_top_menu">
