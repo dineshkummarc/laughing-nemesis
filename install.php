@@ -1,6 +1,6 @@
 ﻿<?php
 /**
- * Streamers Admin Panel 3.2 - Final
+ * Streamers Admin Panel
  *
  * Originally written by Sebastian Graebner <djcrackhome>
  * Fixed and edited by David Schomburg <dave>
@@ -19,9 +19,9 @@
  * @author     David Schomburg <dave@streamerspanel.com>
  * @copyright  2009-2012  S. Graebner <djcrackhome> D. Schomburg <dave>
  * @license    http://creativecommons.org/licenses/by-sa/3.0/ Creative Commons Attribution-ShareAlike 3.0 Unported License
- * @version    3.2 Final
+ * @version    3.2.1
  * @link       http://www.streamerspanel.com
- * @since      File available since Release 3.2 public-beta
+
  */
 
 include "./pages/messages/german.php";
@@ -62,10 +62,10 @@ if (isset($_POST['sql_dns'])) {
 			'Shoutcast Admin', 'Welcome - German Welcome Test Message',
 			'".$messages["i0"]."', '127.0.0.1', '')"))
             { $errors[] = "<h2>".$messages["i6"]."</h2>"; }
-            if ($_POST['server_os'] == "linux") {
+            if (isset($_POST['server_os']) && $_POST['server_os']  == "linux") {
                 $dir_new = $_POST['server_dir']."/";
             }
-            if (!mysql_query("INSERT INTO `settings` (`id`, `title`, `slogan`, `display_limit`, `host_add`, `os`, `dir_to_cpanel`, `scs_config`, `adj_config`, `php_mp3`, `php_exe`, `update_check`, `login_captcha`, `ssh_user`, `ssh_pass`, `ssh_port`, `language`) VALUES (0, '".$_POST['server_title']."', 'Public', 10, '".$_POST['server_dns']."', 'linux', '".dirname(__FILE__)."', '0', '0', '20', '230', '0', '1', '".base64_encode($_POST['server_sshuser'])."', '".base64_encode($_POST['server_sshpass'])."', '".$_POST['server_sshport']."', '".$_POST['server_lang']."') ")){ $errors[] = "<h2>".$messages["i7"]."</h2>";}
+            if (!mysql_query("INSERT INTO `settings` (`id`, `title`, `slogan`, `display_limit`, `host_add`, `os`, `dir_to_cpanel`, `scs_config`, `adj_config`, `php_mp3`, `php_exe`, `update_check`, `login_captcha`, `ssh_user`, `ssh_pass`, `ssh_port`, `language`) VALUES (0, '".$_POST['server_title']."', 'Public', 10, '".$_POST['server_dns']."', 'linux', '".dirname(__FILE__)."/', '0', '0', '20', '230', '0', '1', '".base64_encode($_POST['server_sshuser'])."', '".base64_encode($_POST['server_sshpass'])."', '".$_POST['server_sshport']."', '".$_POST['server_lang']."') ")){ $errors[] = "<h2>".$messages["i7"]."</h2>";}
 
             if (!mysql_query("INSERT INTO `users` (`id`, `username`,`user_password`,`md5_hash`, `user_level`, `user_email`, `contact_number`, `mobile_number`, `account_notes`, `name`, `surname`, `age`) VALUES ('', '".$_POST['user']."', '".$_POST['pass']."', '".md5($_POST['user'].$_POST['pass'])."', 'Super Administrator', 'admin@domain.com', 'none', '0', 'Default Administrator', 'Max', 'Mustermann', 'non') "))  { $errors[] = "<h2>".$messages["i8"]."</h2>";}
 
@@ -73,7 +73,8 @@ if (isset($_POST['sql_dns'])) {
     }
 }
 $cwd = str_replace("\\", "/", getcwd());
-if((count($errors) > 0) && (isset($_POST['sql_dns']))) {
+
+if(isset($errors) && (count($errors) > 0) && (isset($_POST['sql_dns']))) {
     foreach($errors as $errors_cont)
         $errors_list.="<div>".$errors_cont."</div>";
     echo ($errors_list);
@@ -110,7 +111,7 @@ else {
             </div>
             <div class="navhead_blank">
                 <span><?php echo $messages["i11"];?></span>
-                <span>3.2</span>
+                <span>3.2.1</span>
             </div>
             <div class="subnav_child">
                 <ul class="submenu">
@@ -151,21 +152,29 @@ else {
                     if ( $pages == "777" && $temp == "777" ){
                         echo '<li><font color="green"></li><li><b>'.$messages["i24"].'</b></li></font> ';
                     } else {
-
                         if ($pages == "777"){
                             echo ' <li><font color="green"></li><li><b>'.$messages["i25"].'</b></li></font> ';
                         }else{
                             echo '<li><font color="red"><b>'.$messages["i27"].' '.$pages.'</b></font> </li>';
                         }
-
                         if ($temp == "777"){
                             echo '<li><font color="green"></li><li><b>'.$messages["i26"].'</b></li></font> ';
                         }else{
                             echo '<li><font color="red"><b>'.$messages["i28"].' '.$temp.'</b></font> </li>';
                         }
-
-
                     }
+
+                    $server_sc =  substr(sprintf('%o', fileperms('files/linux/sc_trans.bin')), -4);
+                    $trans_sc  = substr(sprintf('%o', fileperms('files/linux/sc_serv.bin')), -4);
+                    if ( $server_sc == "777" && $trans_sc == "777" ){
+                        echo '<li><font color="green"></li><li><b>Dateirechte sc_serv,bin / sc_trans.bin OK!</b></li></font> ';
+                    } else {
+                            echo ' <li><font color="red"></li><li><b>Dateirecht im Ordner "/files/linux/sc_serv.bin" überprüfen!!!</b></li></font> ';
+                    }
+
+
+
+
 
                     ?>
 
@@ -198,21 +207,28 @@ else {
 </div>
 <div id="primary">
     <?PHP
-    if(count($errors) > 0) {
-        foreach($errors as $errors_cont)
-            $errors_list.="<div class=\"error\">".$errors_cont."</div>";
-        echo ($errors_list);
+    $errors = array();
+    $correc = array();
+    $notifi = array();
+    if (count($errors) > 0) {
+        echo array_reduce($errors, function($initial, $value) {
+            return $initial . sprintf('<div class="error">%s</div>', $value);
+        }, '');
     }
-    if(count($notifi) > 0) {
-        foreach($notifi as $notifi_cont)
-            $notifi_list.="<div class=\"notifi\">".$notifi_cont."</div>";
-        echo ($notifi_list);
+
+    if (count($notifi) > 0) {
+        echo array_reduce($notifi, function($initial, $value) {
+            return $initial . sprintf('<div class="notifi">%s</div>', $value);
+        }, '');
     }
-    if(count($correc) > 0) {
-        foreach($correc as $correc_cont)
-            $correc_list.="<div class=\"correct\">".$correc_cont."</div>";
-        echo ($correc_list);
+
+    if (count($correc) > 0) {
+        echo array_reduce($correc, function($initial, $value) {
+            return $initial . sprintf('<div class="correct">%s</div>', $value);
+        }, '');
     }
+
+
 
     ?>
     <div id="content">
@@ -253,7 +269,7 @@ else {
                     </div>
                     <div class="input_field">
                         <label for="a"><?php echo $messages["i49"];?></label>
-                        <input name="sql_pass" type="text" class="mediumfield" />
+                        <input name="sql_pass" type="password" class="mediumfield" />
                         <span class="field_desc"><?php echo $messages["i49"];?></span>
                     </div>
                     <div class="input_field">
@@ -271,7 +287,7 @@ else {
                     </div>
                     <div class="input_field">
                         <label for="a"><?php echo $messages["i55"];?></label>
-                        <input name="pass" type="text" class="mediumfield" />
+                        <input name="pass" type="password" class="mediumfield" />
                         <span class="field_desc"><?php echo $messages["i56"];?></span>
                     </div>
                 </fieldset>

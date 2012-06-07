@@ -1,6 +1,6 @@
 <?PHP
 /**
- * Streamers Admin Panel 3.2 - Final
+ * Streamers Admin Panel
  *
  * Originally written by Sebastian Graebner <djcrackhome>
  * Fixed and edited by David Schomburg <dave>
@@ -19,9 +19,9 @@
  * @author     David Schomburg <dave@streamerspanel.com>
  * @copyright  2009-2012  S. Graebner <djcrackhome> D. Schomburg <dave>
  * @license    http://creativecommons.org/licenses/by-sa/3.0/ Creative Commons Attribution-ShareAlike 3.0 Unported License
- * @version    3.2 Final
+ * @version    3.2.1
  * @link       http://www.streamerspanel.com
- * @since      File available since Release 3.2 public-beta
+
  */
 
 if (stripos($_SERVER['PHP_SELF'], 'content.php') === false) {
@@ -96,7 +96,7 @@ if (isset($_GET['id'])) {
 				if ($setting['os'] == 'linux') {
 					$connection = ssh2_connect('localhost', $setting['ssh_port']);
 					ssh2_auth_password($connection, ''.base64_decode($setting['ssh_user']).'', ''.base64_decode($setting['ssh_pass']).'');
-					$ssh2_exec_com = ssh2_exec($connection, 'sudo -u '.base64_decode($setting['ssh_user']).' '.$setting["dir_to_cpanel"].'files/linux/sc_trans '.$setting["dir_to_cpanel"].$filename.' </dev/null 2>/dev/null >/dev/null & echo $!');
+					$ssh2_exec_com = ssh2_exec($connection, 'sudo -u '.base64_decode($setting['ssh_user']).' '.$setting["dir_to_cpanel"].'files/linux/sc_trans.bin '.$setting["dir_to_cpanel"].$filename.' </dev/null 2>/dev/null >/dev/null & echo $!');
 					sleep(4);
 					$pid = stream_get_contents($ssh2_exec_com);
 					if (!$pid || $pid == "") {

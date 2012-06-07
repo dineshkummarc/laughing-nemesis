@@ -1,7 +1,6 @@
 <?PHP
-
 /**
- * Streamers Admin Panel 3.2 - Final
+ * Streamers Admin Panel
  *
  * Originally written by Sebastian Graebner <djcrackhome>
  * Fixed and edited by David Schomburg <dave>
@@ -20,9 +19,9 @@
  * @author     David Schomburg <dave@streamerspanel.com>
  * @copyright  2009-2012  S. Graebner <djcrackhome> D. Schomburg <dave>
  * @license    http://creativecommons.org/licenses/by-sa/3.0/ Creative Commons Attribution-ShareAlike 3.0 Unported License
- * @version    3.2 Final
+ * @version    3.2.1
  * @link       http://www.streamerspanel.com
- * @since      File available since Release 3.2 public-beta
+
  */
 
 if (!include("database.php"))
@@ -30,6 +29,9 @@ if (!include("database.php"))
 if ($db_host == "" || !isset($db_host))
     die("please reinstall this panel");
 //MySQL Verbindung wird getestet
+$errors = array();
+$notifi = array();
+$correc = array();
 
 $connection = mysql_connect($db_host, $db_username, $db_password) or die("database could not be connected");
 $db = mysql_select_db($database) or die("database could not be selected");
@@ -50,7 +52,9 @@ if (!isset($_GET['include'])) {
     $include_php = filter_var($_GET['include'], FILTER_SANITIZE_STRING);
 }
 // Logout of Panel
-if ($_GET['login'] == "logout") {
+
+
+if (isset($_GET['login']) && $_GET['login'] == "logout") {
     $loggedin = FALSE;
     session_destroy();
     header('Location: index.php?login=logout');
@@ -195,7 +199,7 @@ if ($include_php == "upload" && isset($_GET['upport'])) {
     die();
 }
 
-if ($_GET['playlist'] == "left") {
+if (isset($_GET['playlist']) && $_GET['playlist']  == "left") {
     if (isset($_GET['portbase'])) {
         $port        = $_GET['portbase'];
         $selectowner = mysql_query("SELECT * FROM servers WHERE portbase='" . $port . "' AND owner='" . $loginun . "'");
@@ -231,7 +235,7 @@ if ($_GET['playlist'] == "left") {
             die();
         }
     }
-} elseif (($_GET['playlist'] == "right") && (isset($_GET['listname']))) {
+} elseif ((isset($_GET['playlist']) && $_GET['playlist'] == "right") && (isset($_GET['listname']))) {
     if (isset($_GET['portbase'])) {
         $port        = $_GET['portbase'];
         $selectowner = mysql_query("SELECT * FROM servers WHERE portbase='" . $port . "' AND owner='" . $loginun . "'");
@@ -317,7 +321,7 @@ if (($include_php == "admserver") || ($include_php == "admradio") || ($include_p
 // check messages on headlines
 $newsq = mysql_query("SELECT * FROM headlines order by id DESC LIMIT 20") or die($messages["g4"]);
 $newsq_quant = mysql_num_rows($newsq);
-if ($user_level == "Super Administrator" && $_GET['action'] == "remove" && isset($_GET['delmessid'])) {
+if ($user_level == "Super Administrator" && (isset($_GET['action']) && $_GET['action']  == "remove" && isset($_GET['delmessid']))) {
     if (mysql_query(" DELETE FROM notices WHERE id='" . $_GET['delmessid'] . "' ")) {
         $correc[] = "<h2>" . $messages["18"] . "</h2>";
     } else {
@@ -337,7 +341,7 @@ foreach (mysql_fetch_array($settingsq) as $key => $pref) {
     }
 }
 // update check
-$currentVersion = 3.2;
+$currentVersion = "3.2.1";
 
 
 
@@ -346,7 +350,7 @@ $currentVersion = 3.2;
 if ($setting['update_check'] == 1 && $include_php == 'main') {
     require_once './pages/update.php';
 }
-if ($_GET['request'] == 'html') {
+if (isset($_GET['request']) && $_GET['request']  == 'html') {
     require_once './pages/' . $include_php . '_bottom.php';
     die();
 }
@@ -604,21 +608,26 @@ echo $currentVersion;
         <div id="contentload">
         </div>
         <?PHP
+
+
 if (count($errors) > 0) {
-    foreach ($errors as $errors_cont)
-        $errors_list .= "<div class=\"error\">" . $errors_cont . "</div>";
-    echo ($errors_list);
+    echo array_reduce($errors, function($initial, $value) {
+        return $initial . sprintf('<div class="error">%s</div>', $value);
+    }, '');
 }
+
 if (count($notifi) > 0) {
-    foreach ($notifi as $notifi_cont)
-        $notifi_list .= "<div class=\"notifi\">" . $notifi_cont . "</div>";
-    echo ($notifi_list);
+    echo array_reduce($notifi, function($initial, $value) {
+        return $initial . sprintf('<div class="notifi">%s</div>', $value);
+    }, '');
 }
+
 if (count($correc) > 0) {
-    foreach ($correc as $correc_cont)
-         $correc_list .= "<div class=\"correct\">" . $correc_cont . "</div>";
-    echo ($correc_list);
+    echo array_reduce($correc, function($initial, $value) {
+        return $initial . sprintf('<div class="correct">%s</div>', $value);
+    }, '');
 }
+
 echo '<section id="content">';
 echo '<div class="box">';
 require_once './pages/' . $include_php . '_bottom.php';

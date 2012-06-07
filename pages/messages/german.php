@@ -1,6 +1,6 @@
 <?PHP
 /**
- * Streamers Admin Panel 3.2 - Final
+ * Streamers Admin Panel
  *
  * Originally written by Sebastian Graebner <djcrackhome>
  * Fixed and edited by David Schomburg <dave>
@@ -19,10 +19,22 @@
  * @author     David Schomburg <dave@streamerspanel.com>
  * @copyright  2009-2012  S. Graebner <djcrackhome> D. Schomburg <dave>
  * @license    http://creativecommons.org/licenses/by-sa/3.0/ Creative Commons Attribution-ShareAlike 3.0 Unported License
- * @version    3.2 Final
+ * @version    3.2.1
  * @link       http://www.streamerspanel.com
- * @since      File available since Release 3.2 public-beta
+
  */
+
+
+//
+//
+//	General Variables
+$messages["g01"]		=   "3.2.1";
+$messages["g0"]		=		"Streamers Admin Panel - ".$messages["g01"]."";
+$messages["g1"]		=		"Es konnte keine Verbindug zur Datenbank hergestellt werden!";
+$messages["g2"]		=		"Die Datenbank wurde nicht gefunden!";
+$messages["g3"]		=		"Seite nicht gefunden, bitte Administrator Informieren";
+$messages["g4"]		=		"Nachrichten konnten nicht geladen werden!";
+$messages["g5"]		=		"Einstellungen konnten nicht geladen werden!";
 //
 //
 //  ./install.php
@@ -37,7 +49,7 @@ $messages["i7"]		=		'MySQL: notices Inhalt kann nicht eingefügt werden!';
 $messages["i7"]		=		'MySQL: settings Inhalt kann nicht eingefügt werden!';
 $messages["i8"]		=		'MySQL: userInhalt kann nicht eingefügt werden!';
 $messages["i9"]		=		'Installation erfolgreich! Zum Panel';
-$messages["i10"]	=       'Installation vom Streamers Panel 3.2';
+$messages["i10"]	=       'Installation vom Streamers Panel 3.2.1';
 $messages["i11"]	=		'INSTALLATION';
 $messages["i12"]	=		'Viel Spaß!';
 $messages["i13"]	=		'PHP Erweiterungen:';
@@ -102,16 +114,7 @@ $messages["i71"]	=		'Sprache der Benutzeroberfläche';
 $messages["i172"]	=		'Überprüfung der Vorraussetzung zur Installation';
 $messages["i66"]	=		'';// SSH USERNAME
 $messages["i666"]	=		'';// SSH USERNAME
-//
-//
-//	General Variables
-$messages["g0"]		=		"Streamers Admin Panel - ".$messages["g01"]."";
-$messages["g01"]		=   "3.2";
-$messages["g1"]		=		"Es konnte keine Verbindug zur Datenbank hergestellt werden!";
-$messages["g2"]		=		"Die Datenbank wurde nicht gefunden!";
-$messages["g3"]		=		"Seite nicht gefunden, bitte Administrator Informieren";
-$messages["g4"]		=		"Nachrichten konnten nicht geladen werden!";
-$messages["g5"]		=		"Einstellungen konnten nicht geladen werden!";
+
 //
 //
 //	./index.php
@@ -132,11 +135,11 @@ $messages["14"]		=		"Weblogin";
 //
 //
 //	./content.php
-$messages["15"]		=		""; // Sie wurden erfolgreich mit Ihren pers&ouml;nlichen Daten in das Panel angemeldet
+$messages["15"]		=		"Sie wurden erfolgreich mit Ihren pers&ouml;nlichen Daten in das Panel angemeldet";
 $messages["16"]		=		"Das Installationsverzeichnis des Panels befindet sich noch im Webverzeichnis";
 $messages["17"]		=		"Sie k&ouml;nnen keine Administrationsseiten aufrufen, ohne Administrator-Rechte";
-$messages["18"]		=		"Die Nachricht mit der ID ".$_GET['delmessid']." wurde erfolgreich aus der Datenbank gel&ouml;scht";
-$messages["19"]		=		"Die Nachricht mit der ID ".$_GET['delmessid']." konnte nicht aus der Datenbank gel&ouml;scht werden";
+$messages["18"]		=		"Die Nachricht mit der ID " . (isset($_GET['delmessid']) ? $_GET['delmessid'] : null) ." wurde erfolgreich aus der Datenbank gel&ouml;scht";
+$messages["19"]		=		"Die Nachricht mit der ID ". (isset($_GET['delmessid']) ? $_GET['delmessid'] : null) ." konnte nicht aus der Datenbank gel&ouml;scht werden";
 $messages["20"]		=		"Sie sind angemeldet als";
 $messages["21"]		=		"Abmelden";
 $messages["22"]		=		"Herzlich Willkommen";
