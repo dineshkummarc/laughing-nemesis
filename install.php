@@ -62,7 +62,7 @@ if (isset($_POST['sql_dns'])) {
 			'Shoutcast Admin', 'Welcome - German Welcome Test Message',
 			'".$messages["i0"]."', '127.0.0.1', '')"))
             { $errors[] = "<h2>".$messages["i6"]."</h2>"; }
-            if ($_POST['server_os'] == "linux") {
+            if (isset($_POST['server_os']) && $_POST['server_os']  == "linux") {
                 $dir_new = $_POST['server_dir']."/";
             }
             if (!mysql_query("INSERT INTO `settings` (`id`, `title`, `slogan`, `display_limit`, `host_add`, `os`, `dir_to_cpanel`, `scs_config`, `adj_config`, `php_mp3`, `php_exe`, `update_check`, `login_captcha`, `ssh_user`, `ssh_pass`, `ssh_port`, `language`) VALUES (0, '".$_POST['server_title']."', 'Public', 10, '".$_POST['server_dns']."', 'linux', '".dirname(__FILE__)."/', '0', '0', '20', '230', '0', '1', '".base64_encode($_POST['server_sshuser'])."', '".base64_encode($_POST['server_sshpass'])."', '".$_POST['server_sshport']."', '".$_POST['server_lang']."') ")){ $errors[] = "<h2>".$messages["i7"]."</h2>";}
