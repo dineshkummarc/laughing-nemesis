@@ -151,21 +151,29 @@ else {
                     if ( $pages == "777" && $temp == "777" ){
                         echo '<li><font color="green"></li><li><b>'.$messages["i24"].'</b></li></font> ';
                     } else {
-
                         if ($pages == "777"){
                             echo ' <li><font color="green"></li><li><b>'.$messages["i25"].'</b></li></font> ';
                         }else{
                             echo '<li><font color="red"><b>'.$messages["i27"].' '.$pages.'</b></font> </li>';
                         }
-
                         if ($temp == "777"){
                             echo '<li><font color="green"></li><li><b>'.$messages["i26"].'</b></li></font> ';
                         }else{
                             echo '<li><font color="red"><b>'.$messages["i28"].' '.$temp.'</b></font> </li>';
                         }
-
-
                     }
+
+                    $server_sc =  substr(sprintf('%o', fileperms('files/linux/sc_trans.bin')), -4);
+                    $trans_sc  = substr(sprintf('%o', fileperms('files/linux/sc_serv.bin')), -4);
+                    if ( $server_sc == "777" && $trans_sc == "777" ){
+                        echo '<li><font color="green"></li><li><b>Dateirechte sc_serv,bin / sc_trans.bin OK!</b></li></font> ';
+                    } else {
+                            echo ' <li><font color="red"></li><li><b>Dateirecht im Ordner "/files/linux/sc_serv.bin" überprüfen!!!</b></li></font> ';
+                    }
+
+
+
+
 
                     ?>
 
