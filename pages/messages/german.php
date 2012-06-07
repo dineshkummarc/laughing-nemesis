@@ -135,7 +135,7 @@ $messages["14"]		=		"Weblogin";
 //
 //
 //	./content.php
-$messages["15"]		=		""; // Sie wurden erfolgreich mit Ihren pers&ouml;nlichen Daten in das Panel angemeldet
+$messages["15"]		=		"Sie wurden erfolgreich mit Ihren pers&ouml;nlichen Daten in das Panel angemeldet";
 $messages["16"]		=		"Das Installationsverzeichnis des Panels befindet sich noch im Webverzeichnis";
 $messages["17"]		=		"Sie k&ouml;nnen keine Administrationsseiten aufrufen, ohne Administrator-Rechte";
 $messages["18"]		=		"Die Nachricht mit der ID " . (isset($_GET['delmessid']) ? $_GET['delmessid'] : null) ." wurde erfolgreich aus der Datenbank gel&ouml;scht";

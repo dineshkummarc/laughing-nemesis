@@ -29,8 +29,9 @@ if (!include("database.php"))
 if ($db_host == "" || !isset($db_host))
     die("please reinstall this panel");
 //MySQL Verbindung wird getestet
-
-
+$errors = array();
+$notifi = array();
+$correc = array();
 
 $connection = mysql_connect($db_host, $db_username, $db_password) or die("database could not be connected");
 $db = mysql_select_db($database) or die("database could not be selected");
@@ -610,20 +611,23 @@ echo $currentVersion;
 
 
 if (count($errors) > 0) {
-    foreach ($errors as $errors_cont)
-        $errors_list .= "<div class=\"error\">" . $errors_cont . "</div>";
-    echo ($errors_list);
+    echo array_reduce($errors, function($initial, $value) {
+        return $initial . sprintf('<div class="error">%s</div>', $value);
+    }, '');
 }
+
 if (count($notifi) > 0) {
-    foreach ($notifi as $notifi_cont)
-        $notifi_list .= "<div class=\"notifi\">" . $notifi_cont . "</div>";
-    echo ($notifi_list);
+    echo array_reduce($notifi, function($initial, $value) {
+        return $initial . sprintf('<div class="notifi">%s</div>', $value);
+    }, '');
 }
+
 if (count($correc) > 0) {
-    foreach ($correc as $correc_cont)
-         $correc_list .= "<div class=\"correct\">" . $correc_cont . "</div>";
-    echo ($correc_list);
+    echo array_reduce($correc, function($initial, $value) {
+        return $initial . sprintf('<div class="correct">%s</div>', $value);
+    }, '');
 }
+
 echo '<section id="content">';
 echo '<div class="box">';
 require_once './pages/' . $include_php . '_bottom.php';
