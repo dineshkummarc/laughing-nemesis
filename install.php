@@ -269,7 +269,7 @@ else {
                     </div>
                     <div class="input_field">
                         <label for="a"><?php echo $messages["i49"];?></label>
-                        <input name="sql_pass" type="text" class="mediumfield" />
+                        <input name="sql_pass" type="password" class="mediumfield" />
                         <span class="field_desc"><?php echo $messages["i49"];?></span>
                     </div>
                     <div class="input_field">
@@ -287,7 +287,7 @@ else {
                     </div>
                     <div class="input_field">
                         <label for="a"><?php echo $messages["i55"];?></label>
-                        <input name="pass" type="text" class="mediumfield" />
+                        <input name="pass" type="password" class="mediumfield" />
                         <span class="field_desc"><?php echo $messages["i56"];?></span>
                     </div>
                 </fieldset>
